@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private GameObject go_Player;
     public float moveSpeed;
+    public float camSpeed;
     public int moveAxis = -1;// -1: stationary, 0: Vertical, 1: Horizontal    
     void Start()
     {
