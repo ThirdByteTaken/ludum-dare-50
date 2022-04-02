@@ -15,9 +15,9 @@ public class CameraController : MonoBehaviour
     const int Horizontal_Tiles = 20;
     const int Vertical_Tiles = 20;
 
-    const int Cam_Move_Threshold = 32; // How far the camera trails behind
+    const int Cam_Move_Threshold = 26; // How far the camera trails behind
 
-    const float Cam_Speed = 2.5f;
+    const float Cam_Speed = 3.0f;
 
     // Update is called once per frame
     public void UpdatePosition()
