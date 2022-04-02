@@ -23,8 +23,8 @@ public class CameraController : MonoBehaviour
     public void UpdatePosition()
     {
         var pos = go_Player.transform.position;
-        var maxX = Horizontal_Tiles * Tile_Size;
-        var maxY = Vertical_Tiles * Tile_Size;
+        var maxX = (Horizontal_Tiles * Tile_Size) / 2;
+        var maxY = (Vertical_Tiles * Tile_Size) / 2;
         var xDif = transform.position.x - go_Player.transform.position.x;
         var yDif = transform.position.x - go_Player.transform.position.x;
 
