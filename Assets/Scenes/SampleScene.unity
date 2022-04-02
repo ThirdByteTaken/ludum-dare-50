@@ -286,6 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 60
   moveAxis: -1
+  cameraController: {fileID: 519420033}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
     const int Vertical_Tiles = 20;
 
     // Update is called once per frame
-    void FixedUpdate()
+    public void UpdatePosition()
     {
         var pos = go_Player.transform.position;
         var maxX = Horizontal_Tiles * Tile_Size;

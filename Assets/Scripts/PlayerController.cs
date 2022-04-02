@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
         go_Player = this.gameObject;
     }
 
+    [SerializeField]
+    CameraController cameraController;
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -70,5 +73,6 @@ public class PlayerController : MonoBehaviour
                 break;
         }
         go_Player.transform.localPosition = new Vector2(go_Player.transform.localPosition.x + xMovement, go_Player.transform.localPosition.y + yMovement);
+        cameraController.UpdatePosition();
     }
 }
