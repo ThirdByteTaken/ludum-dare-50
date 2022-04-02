@@ -29,11 +29,22 @@ public class ResourceManager : MonoBehaviour
 
     void GainCurrency()
     {
-        Money += Money_Gain_Amount;
-        txt_Money.text = "Money-" + Money;
-        txt_ResourceGain.text = "+" + Money_Gain_Amount;
-        anim_ResourceGain.SetTrigger("Start");
+        ChangeCurrency(Money_Gain_Amount);
         Invoke("GainCurrency", Money_Gain_Time);
     }
-
+    public void ChangeCurrency(int deltaCurrency)
+    {
+        Money += deltaCurrency;
+        txt_Money.text = "Money-" + Money;
+        if (deltaCurrency < 0)
+        {
+            txt_ResourceGain.text = "-" + deltaCurrency.ToString();
+            anim_ResourceGain.SetTrigger("Lose");
+        }
+        else
+        {
+            txt_ResourceGain.text = "+" + deltaCurrency.ToString();
+            anim_ResourceGain.SetTrigger("Gain");
+        }
+    }
 }

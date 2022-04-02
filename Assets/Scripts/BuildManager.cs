@@ -15,7 +15,7 @@ public class BuildManager : MonoBehaviour
     {
         if (resourceManager.Money < turret.cost) return;
         GameObject.Instantiate(turret.prefab, position: Vector2.zero, rotation: new Quaternion(0, 0, 0, 0));
-        resourceManager.Money -= turret.cost;
+        resourceManager.ChangeCurrency(-turret.cost);
     }
     // Update is called once per frame
     void Update()
