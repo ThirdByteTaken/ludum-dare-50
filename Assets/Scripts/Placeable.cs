@@ -6,7 +6,7 @@ public class Placeable : MonoBehaviour
 {
     private GameObject go_PlaceableObject;
     private Camera cam_Main;
-    public bool isPlacing;
+    public bool is_Placing;
 
     // Start is called before the first frame update
     void Start()
@@ -18,13 +18,13 @@ public class Placeable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPlacing)
+        if (is_Placing)
         {
             Vector2 mousePosition = DevTools.RoundVector3(cam_Main.ScreenToWorldPoint(Input.mousePosition), 32);
             go_PlaceableObject.transform.localPosition = mousePosition;
             if (Input.GetMouseButtonDown(0))
             {
-                isPlacing = false;
+                is_Placing = false;
             }
         }
     }
