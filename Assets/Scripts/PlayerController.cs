@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private GameObject Player;
+    private GameObject go_Player;
     public float moveSpeed;
     public int moveAxis = -1;// -1: stationary, 0: Vertical, 1: Horizontal    
     void Start()
     {
-        Player = this.gameObject;
+        go_Player = this.gameObject;
     }
 
     // Update is called once per frame
@@ -69,6 +69,6 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
         }
-        Player.transform.localPosition = new Vector2(Player.transform.localPosition.x + xMovement, Player.transform.localPosition.y + yMovement);
+        go_Player.transform.localPosition = new Vector2(go_Player.transform.localPosition.x + xMovement, go_Player.transform.localPosition.y + yMovement);
     }
 }
