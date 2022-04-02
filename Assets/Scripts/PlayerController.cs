@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
         }
-        go_Player.transform.localPosition = new Vector2(go_Player.transform.localPosition.x + xMovement, go_Player.transform.localPosition.y + yMovement);
+        go_Player.transform.localPosition = new Vector2(Mathf.Clamp(go_Player.transform.localPosition.x + xMovement, -228, 228), Mathf.Clamp(go_Player.transform.localPosition.y + yMovement, -228, 228));
         cameraController.UpdatePosition();
     }
 }
