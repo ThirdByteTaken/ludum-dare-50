@@ -36,15 +36,7 @@ public class ResourceManager : MonoBehaviour
     {
         Money += deltaCurrency;
         txt_Money.text = "Money-" + Money;
-        if (deltaCurrency < 0)
-        {
-            txt_ResourceGain.text = "-" + deltaCurrency.ToString();
-            anim_ResourceGain.SetTrigger("Lose");
-        }
-        else
-        {
-            txt_ResourceGain.text = "+" + deltaCurrency.ToString();
-            anim_ResourceGain.SetTrigger("Gain");
-        }
+        txt_ResourceGain.text = (deltaCurrency < 0) ? "-" + deltaCurrency.ToString() : deltaCurrency.ToString();
+        anim_ResourceGain.SetTrigger((deltaCurrency < 0) ? "Lose" : "Gain");
     }
 }
