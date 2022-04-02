@@ -352,10 +352,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.00799508
-    y: 0.0076502734
-    width: 0.9840098
-    height: 0.9836066
+    x: 0
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -475,6 +475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 627909244}
   - component: {fileID: 627909243}
+  - component: {fileID: 627909245}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -508,6 +509,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &627909245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627909242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bdc7bc636c9a42269c445aa04cd1eab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txt_Money: {fileID: 1071757775}
 --- !u!1 &1071757773
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +579,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Money-15
+  m_text: Money-0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fb35924e2d5024b09a26d95c59f12d85, type: 2}
   m_sharedMaterial: {fileID: 1997172677478150564, guid: fb35924e2d5024b09a26d95c59f12d85, type: 2}
