@@ -8,7 +8,8 @@ public class ResourceManager : MonoBehaviour
     const int Money_Gain_Amount = 5;
     const int Money_Gain_Time = 5; // In Seconds
 
-    int Money;
+    public static ResourceManager Instance;
+    public int Money;
 
     [SerializeField]
     TMP_Text txt_Money, txt_ResourceGain;
@@ -16,6 +17,10 @@ public class ResourceManager : MonoBehaviour
     [SerializeField]
     Animator anim_ResourceGain;
 
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         Money = 0;

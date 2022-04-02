@@ -6,7 +6,7 @@ public class Placeable : MonoBehaviour
 {
     private GameObject go_PlaceableObject;
     private Camera cam_Main;
-    public bool is_Placing;
+    public bool is_Placing = true;
 
     // Start is called before the first frame update
     void Start()
