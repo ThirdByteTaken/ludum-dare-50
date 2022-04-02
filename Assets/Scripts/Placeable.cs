@@ -22,6 +22,10 @@ public class Placeable : MonoBehaviour
         {
             Vector2 mousePosition = DevTools.RoundVector3(cam_Main.ScreenToWorldPoint(Input.mousePosition), 32);
             go_PlaceableObject.transform.localPosition = mousePosition;
+            if (Input.GetMouseButtonDown(1))
+            {
+                go_PlaceableObject.transform.Rotate(new Vector3(0, 0, 90));
+            }
             if (Input.GetMouseButtonDown(0))
             {
                 is_Placing = false;
