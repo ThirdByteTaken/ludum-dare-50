@@ -11,7 +11,10 @@ public class ResourceManager : MonoBehaviour
     int Money;
 
     [SerializeField]
-    TMP_Text txt_Money;
+    TMP_Text txt_Money, txt_ResourceGain;
+
+    [SerializeField]
+    Animator anim_ResourceGain;
 
     void Start()
     {
@@ -23,8 +26,9 @@ public class ResourceManager : MonoBehaviour
     {
         Money += Money_Gain_Amount;
         txt_Money.text = "Money-" + Money;
+        txt_ResourceGain.text = "+" + Money_Gain_Amount;
+        anim_ResourceGain.SetTrigger("Start");
         Invoke("GainCurrency", Money_Gain_Time);
     }
-
 
 }
