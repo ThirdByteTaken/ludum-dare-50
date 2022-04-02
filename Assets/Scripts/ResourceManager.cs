@@ -23,7 +23,7 @@ public class ResourceManager : MonoBehaviour
     }
     void Start()
     {
-        Money = 0;
+        Money = 10; // TODO fix
         Invoke("GainCurrency", Money_Gain_Time);
     }
 

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private GameObject go_Player;
+    private Rigidbody2D rb_Player;
     public float moveSpeed;
     public float camSpeed;
     public int moveAxis = -1;// -1: stationary, 0: Vertical, 1: Horizontal    
     void Start()
     {
-        go_Player = this.gameObject;
+        rb_Player = this.GetComponent<Rigidbody2D>();
     }
 
     [SerializeField]
@@ -73,7 +73,8 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
         }
-        go_Player.transform.localPosition = new Vector2(Mathf.Clamp(go_Player.transform.localPosition.x + xMovement, -304, 304), Mathf.Clamp(go_Player.transform.localPosition.y + yMovement, -304, 304));
+
+        rb_Player.MovePosition(new Vector2(Mathf.Clamp(rb_Player.transform.localPosition.x + xMovement, -304, 304), Mathf.Clamp(rb_Player.transform.localPosition.y + yMovement, -304, 304)));
         cameraController.UpdatePosition();
     }
 }
