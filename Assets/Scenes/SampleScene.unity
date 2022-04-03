@@ -645,6 +645,10 @@ MonoBehaviour:
   landingPositionsRadius: 192
   moveSpeed: 10
   go_AsteroidPrefab: {fileID: 4804528784838409100, guid: fe7bb2fbd59322d41a1ac8af26550d2c, type: 3}
+  spr_Asteroids:
+  - {fileID: 21300000, guid: 020e6157a61544874b179746431fd0af, type: 3}
+  - {fileID: 21300000, guid: 28df3698b03f94657b68fa61bb2b0eb0, type: 3}
+  - {fileID: 21300000, guid: 093b431ae28e64caa9820017b03b446e, type: 3}
 --- !u!1 &799439125
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,8 +685,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 106, y: 38}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 167.65, y: 87.377}
+  m_SizeDelta: {x: 64.6993, y: 15.2463}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &799439127
 MonoBehaviour:
@@ -1390,17 +1394,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Buy turret
+  m_text: Buy Turret
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb35924e2d5024b09a26d95c59f12d85, type: 2}
+  m_sharedMaterial: {fileID: 1997172677478150564, guid: fb35924e2d5024b09a26d95c59f12d85, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1417,8 +1421,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1428,8 +1432,8 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_wordSpacing: -40
+  m_lineSpacing: -80
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
