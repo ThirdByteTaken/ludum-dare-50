@@ -7,6 +7,7 @@ public class Placeable : MonoBehaviour
     private GameObject go_PlaceableObject;
     private Camera cam_Main;
     public bool is_Placing = true;
+    public bool is_Placeable = true;
 
     // Start is called before the first frame update
     void Start()
@@ -22,14 +23,35 @@ public class Placeable : MonoBehaviour
         {
             Vector2 mousePosition = DevTools.RoundVector3(cam_Main.ScreenToWorldPoint(Input.mousePosition), 32);
             go_PlaceableObject.transform.localPosition = mousePosition;
-            if (Input.GetMouseButtonDown(1))
-            {
-                go_PlaceableObject.transform.Rotate(new Vector3(0, 0, 90));
-            }
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && is_Placeable)
             {
                 is_Placing = false;
+                BuildManager.Instance.StopPlacing();
             }
+            if (Input.GetMouseButtonDown(1))
+            {
+                BuildManager.Instance.CancelPlacing();
+                Destroy(this.gameObject);
+            }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if ((collider.CompareTag("Turret") || collider.CompareTag("Player")) && is_Placing)
+        {
+            go_PlaceableObject.GetComponent<SpriteRenderer>().color = Color.red;
+            go_PlaceableObject.transform.Find("Head").GetComponent<SpriteRenderer>().color = Color.red;
+            is_Placeable = false;
+        }
+    }
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if ((collider.CompareTag("Turret") || collider.CompareTag("Player")) && is_Placing)
+        {
+            go_PlaceableObject.GetComponent<SpriteRenderer>().color = Color.white;
+            go_PlaceableObject.transform.Find("Head").GetComponent<SpriteRenderer>().color = Color.white;
+            is_Placeable = true;
         }
     }
 }
