@@ -46,14 +46,14 @@ public class Asteroid : MonoBehaviour
 
         if (height <= 0)
         {
-            Destroy(this.gameObject);
+            AsteroidManager.DestroyAsteroid(gameObject);
             print("you got blown up");
         }
         if (health <= 0)
         {
             var resource = Instantiate(go_resource);
             resource.transform.position = transform.position;
-            Destroy(this.gameObject);
+            AsteroidManager.DestroyAsteroid(gameObject);
             return;
         }
         sr_Asteroid.sprite = spr_Asteroids[Mathf.RoundToInt((health / startingHealth) * (spr_Asteroids.Length - 1))];
