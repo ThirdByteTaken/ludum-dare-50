@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Single Turret
   m_EditorClassIdentifier: 
   cost: 10
-  prefab: {fileID: 1515552093747896596, guid: 11dfaf8b9b8484340b8367f6570a1ca2, type: 3}
+  prefab: {fileID: 3364442625970758730, guid: 6ac668ee95eb18a418bdad5d1413da83, type: 3}
