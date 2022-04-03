@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Rosesare
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -1731962386
   material: {fileID: 1997172677478150564}
-  materialHashCode: 0
+  materialHashCode: -375268722
   m_Version: 1.1.0
   m_SourceFontFileGUID: 3f285313ebc084e038636f78d5bb6269
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 3f285313ebc084e038636f78d5bb6269, type: 3}
@@ -73,7 +73,7 @@ MonoBehaviour:
     m_StyleName: Regular
     m_PointSize: 64
     m_Scale: 1
-    m_LineHeight: 64
+    m_LineHeight: 128
     m_AscentLine: 64
     m_CapLine: 64
     m_MeanLine: 48
