@@ -26,14 +26,19 @@ public class Placeable : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && is_Placeable)
             {
                 is_Placing = false;
-                BuildManager.Instance.StopPlacing();
+                BuildManager.Instance.StopPlacing(false);
+            }
+            if (Input.GetMouseButtonDown(1))
+            {
+                BuildManager.Instance.StopPlacing(true);
+                Destroy(this.gameObject);
             }
         }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.CompareTag("Turret") && is_Placing)
+        if ((collider.CompareTag("Turret") || collider.CompareTag("Player")) && is_Placing)
         {
             go_PlaceableObject.GetComponent<SpriteRenderer>().color = Color.red;
             go_PlaceableObject.transform.Find("Head").GetComponent<SpriteRenderer>().color = Color.red;
@@ -42,7 +47,7 @@ public class Placeable : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collider)
     {
-        if (collider.CompareTag("Turret") && is_Placing)
+        if ((collider.CompareTag("Turret") || collider.CompareTag("Player")) && is_Placing)
         {
             go_PlaceableObject.GetComponent<SpriteRenderer>().color = Color.white;
             go_PlaceableObject.transform.Find("Head").GetComponent<SpriteRenderer>().color = Color.white;

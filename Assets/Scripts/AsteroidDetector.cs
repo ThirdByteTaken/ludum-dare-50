@@ -36,7 +36,6 @@ public class AsteroidDetector : MonoBehaviour
 
         if (collider.CompareTag("Asteroid"))
         {
-            print("asteroird stay");
             gun.AimAtTarget(collider.gameObject);
         }
     }
