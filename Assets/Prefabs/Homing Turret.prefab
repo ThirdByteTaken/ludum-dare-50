@@ -101,8 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go_Head: {fileID: 3364442626930139349}
-  FireSpeed: 1
-  Damage: 20
+  FireSpeed: 2
+  Damage: 50
+  Bullet_Speed: 32
   Homing: 1
   bullet: {fileID: 2221394275494579366, guid: 40160a95cd413ff40a8502c2ea1b78d8, type: 3}
   go_Target: {fileID: 0}
@@ -278,7 +279,7 @@ Transform:
   m_GameObject: {fileID: 3364442627494817041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 42.41836}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 3364442625970758727}
   m_RootOrder: 1

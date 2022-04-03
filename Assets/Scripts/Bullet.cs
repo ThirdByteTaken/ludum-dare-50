@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [HideInInspector]
     public bool Homing = false; // TODO Add bullet homing depending on turret
+    [HideInInspector]
     public float damage;
 
+    [HideInInspector]
     public GameObject go_Target;
 
 
     Vector3 targetPos;
-
-    const float Bullet_Speed = 64f;
+    [HideInInspector]
+    public float Bullet_Speed = 64f;
     const float Precision = 0.1f; // The lower, the more precise
 
     float timeToHit; // Amount of time between shooting and bullet hitting target
+    float secondsPassed;
+    bool sortingOrderAdjusted;
 
     void Start()
     {
@@ -52,12 +57,24 @@ public class Bullet : MonoBehaviour
         if (Homing)
         {
             transform.position = Vector3.MoveTowards(transform.position, go_Target.transform.position, Bullet_Speed * Time.deltaTime);
+            Vector2 direction = ((Vector2)go_Target.transform.position - (Vector2)transform.position).normalized;
+            transform.up = direction;
         }
         else
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPos, Bullet_Speed * Time.deltaTime);
         }
-
+        if (!sortingOrderAdjusted)
+        {
+            secondsPassed += Time.deltaTime;
+            if (secondsPassed * Bullet_Speed > 16)
+            {
+                SpriteRenderer sr_bullet = GetComponent<SpriteRenderer>();
+                sr_bullet.sortingLayerName = "Foreground";
+                sr_bullet.sortingOrder = 0;
+                sortingOrderAdjusted = true;
+            }
+        }
     }
     void OnTriggerEnter2D(Collider2D collider)
     {

@@ -12,6 +12,8 @@ public class Gun : MonoBehaviour
 
     [SerializeField]
     int Damage;
+    [SerializeField]
+    float Bullet_Speed;
 
     [SerializeField]
     bool Homing;
@@ -47,6 +49,7 @@ public class Gun : MonoBehaviour
             shotBullet.Homing = Homing;
             shotBullet.go_Target = go_Target;
             shotBullet.damage = Damage;
+            shotBullet.Bullet_Speed = Bullet_Speed;
             shot.transform.position = go_Head.transform.position;
         }
 

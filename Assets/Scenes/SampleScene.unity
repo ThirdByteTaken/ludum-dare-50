@@ -849,9 +849,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: '\tcost -\t20
 
-    Rocket\thoming -\t  Y
+    \thoming -\t  Y
 
-    \tdamage -\t20'
+    Rocket\trange -\t20
+
+    \tdamage
+    -\t50
+
+    \tfire time -\t2s
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fb35924e2d5024b09a26d95c59f12d85, type: 2}
   m_sharedMaterial: {fileID: 1997172677478150564, guid: fb35924e2d5024b09a26d95c59f12d85, type: 2}
@@ -1360,7 +1367,7 @@ MonoBehaviour:
   minHealth: 10
   maxHealth: 50
   landingPositionsRadius: 192
-  moveSpeed: 10
+  moveSpeed: 20
   go_AsteroidPrefab: {fileID: 4804528784838409100, guid: fe7bb2fbd59322d41a1ac8af26550d2c, type: 3}
   spr_Asteroids:
   - {fileID: 21300000, guid: 020e6157a61544874b179746431fd0af, type: 3}
@@ -2358,9 +2365,14 @@ MonoBehaviour:
       m_Calls: []
   m_text: '\tcost -\t10
 
-    Turret\thoming -\t  N
+    \thoming -\t  N
 
-    \tdamage -\t10'
+    Turret\trange -\t10
+
+    \tdamage
+    -\t10
+
+    \tfire time -\t1s'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fb35924e2d5024b09a26d95c59f12d85, type: 2}
   m_sharedMaterial: {fileID: 1997172677478150564, guid: fb35924e2d5024b09a26d95c59f12d85, type: 2}
