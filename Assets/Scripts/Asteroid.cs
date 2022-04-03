@@ -51,6 +51,7 @@ public class Asteroid : MonoBehaviour
         if (health <= 0)
         {
             Destroy(this.gameObject);
+            return;
         }
         sr_Asteroid.sprite = spr_Asteroids[Mathf.RoundToInt((health / startingHealth) * (spr_Asteroids.Length - 1))];
     }

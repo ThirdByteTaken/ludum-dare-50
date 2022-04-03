@@ -6,7 +6,9 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager Instance;
     ResourceManager resourceManager;
-    List<GameObject> placedTurrets = new List<GameObject>();
+    public GameObject go_BuildMenu;
+    public GameObject go_BuildButton;
+    List<GameObject> go_placedTurrets = new List<GameObject>();
     GameObject go_currentPlacingTurret;
     int placingCost;
     void Awake()
@@ -33,7 +35,7 @@ public class BuildManager : MonoBehaviour
         }
         go_currentPlacingTurret = GameObject.Instantiate(turret.prefab, position: Vector2.zero, rotation: new Quaternion(0, 0, 0, 0));
 
-        placedTurrets.ForEach(x => x.transform.Find("Range").GetComponent<SpriteRenderer>().enabled = true);
+        go_placedTurrets.ForEach(x => x.transform.Find("Range").GetComponent<SpriteRenderer>().enabled = true);
         go_currentPlacingTurret.transform.Find("Range").GetComponent<SpriteRenderer>().enabled = true;
         go_currentPlacingTurret.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         go_currentPlacingTurret.GetComponent<BoxCollider2D>().isTrigger = true;
@@ -42,16 +44,29 @@ public class BuildManager : MonoBehaviour
     }
     public void StopPlacing()
     {
-        placedTurrets.Add(go_currentPlacingTurret);
-        placedTurrets.ForEach(x => x.transform.Find("Range").GetComponent<SpriteRenderer>().enabled = false);
+        go_placedTurrets.Add(go_currentPlacingTurret);
+        go_placedTurrets.ForEach(x => x.transform.Find("Range").GetComponent<SpriteRenderer>().enabled = false);
         go_currentPlacingTurret.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         go_currentPlacingTurret.GetComponent<BoxCollider2D>().isTrigger = false;
         go_currentPlacingTurret.GetComponent<Gun>().enabled = true;
 
         resourceManager.ChangeCurrency(-placingCost);
+        HideBuildMenu();
     }
     public void CancelPlacing()
     {
-        placedTurrets.ForEach(x => x.transform.Find("Range").GetComponent<SpriteRenderer>().enabled = false);
+        go_placedTurrets.ForEach(x => x.transform.Find("Range").GetComponent<SpriteRenderer>().enabled = false);
+        HideBuildMenu();
+    }
+
+    public void ShowBuildMenu()
+    {
+        go_BuildButton.SetActive(false);
+        go_BuildMenu.SetActive(true);
+    }
+    public void HideBuildMenu()
+    {
+        go_BuildButton.SetActive(true);
+        go_BuildMenu.SetActive(false);
     }
 }
