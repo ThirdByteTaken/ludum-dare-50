@@ -8,6 +8,7 @@ public class Placeable : MonoBehaviour
     private Camera cam_Main;
     public bool is_Placing = true;
     public bool is_Placeable = true;
+    int colliders;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class Placeable : MonoBehaviour
     {
         if ((collider.CompareTag("Turret") || collider.CompareTag("Player")) && is_Placing)
         {
+            colliders++;
             go_PlaceableObject.GetComponent<SpriteRenderer>().color = Color.red;
             go_PlaceableObject.transform.Find("Head").GetComponent<SpriteRenderer>().color = Color.red;
             is_Placeable = false;
@@ -49,9 +51,13 @@ public class Placeable : MonoBehaviour
     {
         if ((collider.CompareTag("Turret") || collider.CompareTag("Player")) && is_Placing)
         {
-            go_PlaceableObject.GetComponent<SpriteRenderer>().color = Color.white;
-            go_PlaceableObject.transform.Find("Head").GetComponent<SpriteRenderer>().color = Color.white;
-            is_Placeable = true;
+            colliders--;
+            if (colliders <= 0)
+            {
+                go_PlaceableObject.GetComponent<SpriteRenderer>().color = Color.white;
+                go_PlaceableObject.transform.Find("Head").GetComponent<SpriteRenderer>().color = Color.white;
+                is_Placeable = true;
+            }
         }
     }
 }
