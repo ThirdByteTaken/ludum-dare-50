@@ -32,6 +32,7 @@ public class AsteroidManager : MonoBehaviour
         Vector2 newLandingPosition = new Vector2(Random.Range(-landingPositionsRadius / 2, landingPositionsRadius / 2), Random.Range(-landingPositionsRadius / 2, landingPositionsRadius / 2));
         float newHealth = Random.Range(minHealth, maxHealth);
         float newSecondsToFall = Random.Range(minFallTime, maxFallTime);
+        newAsteroid.GetComponent<Asteroid>().go_resource = ResourceManager.Instance.RandomResource();
         newAsteroid.GetComponent<Asteroid>().SetUpAsteroid(newFallVector, newLandingPosition, newHealth, newSecondsToFall);
         Invoke("SpawnAsteroid", 1);
     }
