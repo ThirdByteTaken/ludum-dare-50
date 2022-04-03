@@ -43,8 +43,10 @@ public class Gun : MonoBehaviour
         {
             var shot = Instantiate(bullet.gameObject);
             shot.SetActive(true);
-            shot.GetComponent<Bullet>().Homing = Homing;
-            shot.GetComponent<Bullet>().go_Target = go_Target;
+            Bullet shotBullet = shot.GetComponent<Bullet>();
+            shotBullet.Homing = Homing;
+            shotBullet.go_Target = go_Target;
+            shotBullet.damage = Damage;
             shot.transform.position = go_Head.transform.position;
         }
 
