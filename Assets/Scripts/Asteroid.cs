@@ -38,5 +38,9 @@ public class Asteroid : MonoBehaviour
             Destroy(this.gameObject);
             print("you got blown up");
         }
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
