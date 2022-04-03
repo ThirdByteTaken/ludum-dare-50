@@ -10,6 +10,53 @@ public class ResourceManager : MonoBehaviour
 
     public static ResourceManager Instance;
     public int Money;
+    int gold, iron, wood, rock;
+    public int Gold
+    {
+        get
+        {
+            return gold;
+        }
+        set
+        {
+            gold = value;
+        }
+    }
+    public int Iron
+    {
+        get
+        {
+            return iron;
+        }
+        set
+        {
+            iron = value;
+        }
+    }
+    public int Wood
+    {
+        get
+        {
+            return wood;
+        }
+        set
+        {
+            wood = value;
+        }
+    }
+    public int Rock
+    {
+        get
+        {
+            return rock;
+        }
+        set
+        {
+            rock = value;
+        }
+    }
+
+    public GameObject[] go_Resources;
 
     [SerializeField]
     TMP_Text txt_Money, txt_ResourceGain;
@@ -38,5 +85,12 @@ public class ResourceManager : MonoBehaviour
         txt_Money.text = "Money-" + Money;
         txt_ResourceGain.text = (deltaCurrency < 0) ? deltaCurrency.ToString() : "+" + deltaCurrency.ToString();
         anim_ResourceGain.SetTrigger((deltaCurrency < 0) ? "Lose" : "Gain");
+    }
+
+    public GameObject RandomResource() // Weighted odds
+    {
+        GameObject[] list = { go_Resources[0], go_Resources[0], go_Resources[1], go_Resources[1], go_Resources[2], go_Resources[2], go_Resources[3], }; // Last one is gold
+        return list[Random.Range(0, list.Length)];
+
     }
 }
