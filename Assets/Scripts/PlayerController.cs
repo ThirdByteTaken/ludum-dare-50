@@ -7,14 +7,18 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb_Player;
     public float moveSpeed;
     public float camSpeed;
+    public float animSpeed;
     public int moveAxis = -1;// -1: stationary, 0: Vertical, 1: Horizontal    
     void Start()
     {
         rb_Player = this.GetComponent<Rigidbody2D>();
+        anim_Player = this.GetComponent<Animator>();
     }
 
     [SerializeField]
     CameraController cameraController;
+
+    Animator anim_Player;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -74,6 +78,29 @@ public class PlayerController : MonoBehaviour
                 break;
         }
 
+        if (xMovement > 0)
+        {
+            anim_Player.speed = animSpeed;
+            anim_Player.SetTrigger("Right");
+        }
+        else if (xMovement < 0)
+        {
+            anim_Player.speed = animSpeed;
+            anim_Player.SetTrigger("Left");
+        }
+        else if (yMovement > 0)
+        {
+
+        }
+        else if (yMovement < 0)
+        {
+
+        }
+        else
+
+        {
+            anim_Player.speed = 0;
+        }
         rb_Player.MovePosition(new Vector2(Mathf.Clamp(rb_Player.transform.localPosition.x + xMovement, -304, 304), Mathf.Clamp(rb_Player.transform.localPosition.y + yMovement, -304, 304)));
         cameraController.UpdatePosition();
     }
