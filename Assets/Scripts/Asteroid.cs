@@ -18,6 +18,7 @@ public class Asteroid : MonoBehaviour
 
     public Sprite[] spr_Asteroids;
 
+    public Resource resource;
 
     public void SetUpAsteroid(Vector2 _FallVector, Vector2 LandingPosition, float _health, float _secondsToFall)
     {
