@@ -10,14 +10,16 @@ public class Asteroid : MonoBehaviour
     public float fallSpeed;
 
     public float secondsToFall;
+    public float health;
     bool ready = false;
-    public void SetUpAsteroid(Vector2 _FallVector, Vector2 LandingPosition, float _secondsToFall)
+    public void SetUpAsteroid(Vector2 _FallVector, Vector2 LandingPosition, float _health, float _secondsToFall)
     {
         FallVector = _FallVector;
         sr_Asteroid = GetComponent<SpriteRenderer>();
         secondsToFall = _secondsToFall;
         fallSpeed = 100 / secondsToFall; // After seconds to fall time, height will be zero
         transform.position = LandingPosition - (FallVector * secondsToFall);// new Vector2(LandingPosition.x-(FallVector.x * secondsToFall), LandingPosition.y-(FallVector.y * secondsToFall));
+        health = _health;
         ready = true;
     }
 
