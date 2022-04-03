@@ -18,9 +18,19 @@ public class BuildManager : MonoBehaviour
         resourceManager = ResourceManager.Instance;
     }
 
+    Animator anim_CurrentButton;
+    public void SetAnimator(Animator anim) // Button turns red if you can't afford
+    {
+        anim_CurrentButton = anim;
+    }
+
     public void BuyObject(Turret turret)
     {
-        if (resourceManager.Money < turret.cost) return;
+        if (resourceManager.Money < turret.cost)
+        {
+            anim_CurrentButton.SetTrigger("CantBuild");
+            return;
+        }
         go_currentPlacingTurret = GameObject.Instantiate(turret.prefab, position: Vector2.zero, rotation: new Quaternion(0, 0, 0, 0));
 
         placedTurrets.ForEach(x => x.transform.Find("Range").GetComponent<SpriteRenderer>().enabled = true);
