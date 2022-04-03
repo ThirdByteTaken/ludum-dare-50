@@ -44,7 +44,11 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        if (go_Target == null) Destroy(gameObject);
+        if (go_Target == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         if (Homing)
         {
             transform.position = Vector3.MoveTowards(transform.position, go_Target.transform.position, Bullet_Speed * Time.deltaTime);
