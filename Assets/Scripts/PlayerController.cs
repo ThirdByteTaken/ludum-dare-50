@@ -90,11 +90,13 @@ public class PlayerController : MonoBehaviour
         }
         else if (yMovement > 0)
         {
-
+            anim_Player.speed = animSpeed;
+            anim_Player.SetTrigger("Up");
         }
         else if (yMovement < 0)
         {
-
+            anim_Player.speed = animSpeed;
+            anim_Player.SetTrigger("Down");
         }
         else
 
