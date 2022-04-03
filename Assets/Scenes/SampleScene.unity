@@ -1416,7 +1416,7 @@ MonoBehaviour:
   landingPositionsRadius: 192
   moveSpeed: 20
   go_AsteroidPrefab: {fileID: 4804528784838409100, guid: fe7bb2fbd59322d41a1ac8af26550d2c, type: 3}
-  go_ExplosionPrefab: {fileID: 1860884170}
+  go_ExplosionPrefab: {fileID: 3240945319975213522, guid: 14c6876c9fbd562449ac3d0ad4b3f1ea, type: 3}
   spr_Asteroids:
   - {fileID: 21300000, guid: 020e6157a61544874b179746431fd0af, type: 3}
   - {fileID: 21300000, guid: 28df3698b03f94657b68fa61bb2b0eb0, type: 3}
@@ -3425,68 +3425,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845161034}
   m_CullTransparentMesh: 1
---- !u!1 &1860884170 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3240945319975213522, guid: 14c6876c9fbd562449ac3d0ad4b3f1ea, type: 3}
-  m_PrefabInstance: {fileID: 1870413901}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1870413901
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3240945319975213521, guid: 14c6876c9fbd562449ac3d0ad4b3f1ea, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3240945319975213521, guid: 14c6876c9fbd562449ac3d0ad4b3f1ea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 26.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3240945319975213521, guid: 14c6876c9fbd562449ac3d0ad4b3f1ea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3240945319975213521, guid: 14c6876c9fbd562449ac3d0ad4b3f1ea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3240945319975213521, guid: 14c6876c9fbd562449ac3d0ad4b3f1ea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9396927
-      objectReference: {fileID: 0}
-    - target: {fileID: 3240945319975213521, guid: 14c6876c9fbd562449ac3d0ad4b3f1ea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3240945319975213521, guid: 14c6876c9fbd562449ac3d0ad4b3f1ea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3240945319975213521, guid: 14c6876c9fbd562449ac3d0ad4b3f1ea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.34202015
-      objectReference: {fileID: 0}
-    - target: {fileID: 3240945319975213521, guid: 14c6876c9fbd562449ac3d0ad4b3f1ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3240945319975213521, guid: 14c6876c9fbd562449ac3d0ad4b3f1ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3240945319975213521, guid: 14c6876c9fbd562449ac3d0ad4b3f1ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3240945319975213522, guid: 14c6876c9fbd562449ac3d0ad4b3f1ea, type: 3}
-      propertyPath: m_Name
-      value: Explosion
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 14c6876c9fbd562449ac3d0ad4b3f1ea, type: 3}
 --- !u!1 &1884690369
 GameObject:
   m_ObjectHideFlags: 0
