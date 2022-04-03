@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public bool Homing = false; // TODO Add bullet homing depending on turret
+    public float damage;
 
     public GameObject go_Target;
 
@@ -37,17 +38,23 @@ public class Bullet : MonoBehaviour
 
             targetPos = predictedPosition;
         }
+        else
+        {
+            targetPos = go_Target.transform.position;
+        }
     }
 
     void Update()
     {
-        if (Homing)
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, Bullet_Speed * Time.deltaTime);
+
+    }
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Asteroid"))
         {
-            transform.position = Vector3.MoveTowards(transform.position, go_Target.transform.position, Bullet_Speed * Time.deltaTime);
-        }
-        else
-        {
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, Bullet_Speed * Time.deltaTime);
+            collider.GetComponent<Asteroid>().health -= damage;
+            Destroy(gameObject);
         }
     }
 }

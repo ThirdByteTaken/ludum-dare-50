@@ -11,6 +11,9 @@ public class Gun : MonoBehaviour
     float FireSpeed;
 
     [SerializeField]
+    int Damage;
+
+    [SerializeField]
     bool Homing;
 
     [SerializeField]
