@@ -23,19 +23,16 @@ public class BuildManager : MonoBehaviour
         go_currentPlacingTurret = GameObject.Instantiate(turret.prefab, position: Vector2.zero, rotation: new Quaternion(0, 0, 0, 0));
         placedTurrets.Add(go_currentPlacingTurret);
         placedTurrets.ForEach(x => x.transform.Find("Range").GetComponent<SpriteRenderer>().enabled = true);
-        go_currentPlacingTurret.GetComponent<BoxCollider2D>().enabled = false;
+        go_currentPlacingTurret.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        go_currentPlacingTurret.GetComponent<BoxCollider2D>().isTrigger = true;
         go_currentPlacingTurret.GetComponent<Gun>().enabled = false;
         resourceManager.ChangeCurrency(-turret.cost);
     }
     public void StopPlacing()
     {
         placedTurrets.ForEach(x => x.transform.Find("Range").GetComponent<SpriteRenderer>().enabled = false);
-        go_currentPlacingTurret.GetComponent<BoxCollider2D>().enabled = true;
+        go_currentPlacingTurret.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        go_currentPlacingTurret.GetComponent<BoxCollider2D>().isTrigger = false;
         go_currentPlacingTurret.GetComponent<Gun>().enabled = true;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
