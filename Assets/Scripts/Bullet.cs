@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
 
     [HideInInspector]
     public GameObject go_Target;
-
+    Asteroid ast_Target;
 
     Vector3 targetPos;
     [HideInInspector]
@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        Asteroid targetAsteroid = go_Target.GetComponent<Asteroid>();
+        ast_Target = go_Target.GetComponent<Asteroid>();
         if (!Homing)
         {
             Vector2 predictedPosition = go_Target.transform.position;
@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour
 
             for (float i = 0; i < 60; i += Precision)
             {
-                predictedPosition += targetAsteroid.FallVector * Precision;
+                predictedPosition += ast_Target.FallVector * Precision;
                 distance = Vector2.Distance(transform.position, predictedPosition);
                 if (Bullet_Speed * i >= distance)
                 {
@@ -42,7 +42,7 @@ public class Bullet : MonoBehaviour
 
             targetPos = predictedPosition;
         }
-
+        ast_Target.predictedHealth -= damage;
         Vector2 direction = ((Vector2)targetPos - (Vector2)transform.position).normalized;
         transform.up = direction;
     }
@@ -80,7 +80,13 @@ public class Bullet : MonoBehaviour
     {
         if (collider.CompareTag("Asteroid"))
         {
-            collider.GetComponent<Asteroid>().health -= damage;
+            Asteroid ast_Collider = collider.GetComponent<Asteroid>();
+            if (!collider.gameObject.Equals(go_Target)) // if bullet intercepted by another asteroid
+            {
+                ast_Target.predictedHealth += damage; // add back subtracted damage
+            }
+
+            ast_Collider.health -= damage;
             Destroy(gameObject);
         }
     }

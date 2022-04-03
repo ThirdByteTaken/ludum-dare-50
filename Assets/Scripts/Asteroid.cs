@@ -11,6 +11,7 @@ public class Asteroid : MonoBehaviour
 
     public float secondsToFall;
     public float health;
+    public float predictedHealth; // health after bullets currently in the air hit it
 
     float startingHealth;
 
@@ -32,7 +33,10 @@ public class Asteroid : MonoBehaviour
         startingHealth = health;
         ready = true;
     }
-
+    void Start()
+    {
+        predictedHealth = health;
+    }
     // Update is called once per frame
     void Update()
     {
