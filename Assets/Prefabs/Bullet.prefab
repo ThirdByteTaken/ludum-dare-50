@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Homing: 0
-  damage: 10
+  damage: -1
   go_Target: {fileID: 0}
 --- !u!61 &2221394275494579365
 BoxCollider2D:

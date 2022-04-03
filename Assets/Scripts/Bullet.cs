@@ -38,15 +38,18 @@ public class Bullet : MonoBehaviour
 
             targetPos = predictedPosition;
         }
-        else
-        {
-            targetPos = go_Target.transform.position;
-        }
     }
 
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, Bullet_Speed * Time.deltaTime);
+        if (Homing)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, go_Target.transform.position, Bullet_Speed * Time.deltaTime);
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, Bullet_Speed * Time.deltaTime);
+        }
 
     }
     void OnTriggerEnter2D(Collider2D collider)

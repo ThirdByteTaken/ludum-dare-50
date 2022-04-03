@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7936631102185909129}
   - component: {fileID: -1149828174744712110}
   m_Layer: 0
-  m_Name: Turret
+  m_Name: Homing Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,8 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go_Head: {fileID: 3364442626930139349}
   FireSpeed: 1
-  Damage: 0
-  Homing: 0
+  Damage: 20
+  Homing: 1
   bullet: {fileID: 2221394275494579366, guid: 7ae6d4d68c354b34caa44ee4fb04f121, type: 3}
   go_Target: {fileID: 0}
 --- !u!50 &8049986797393118466
