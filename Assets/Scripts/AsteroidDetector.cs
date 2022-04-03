@@ -33,8 +33,10 @@ public class AsteroidDetector : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider)
     {
+
         if (collider.CompareTag("Asteroid"))
         {
+            print("asteroird stay");
             gun.AimAtTarget(collider.gameObject);
         }
     }

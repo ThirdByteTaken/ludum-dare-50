@@ -9,7 +9,6 @@ public class Bullet : MonoBehaviour
 
     public GameObject go_Target;
 
-    Asteroid asteroid;
 
     Vector3 targetPos;
 
@@ -20,7 +19,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        asteroid = go_Target.GetComponent<Asteroid>();
+        Asteroid targetAsteroid = go_Target.GetComponent<Asteroid>();
         if (!Homing)
         {
             Vector2 predictedPosition = go_Target.transform.position;
@@ -28,7 +27,7 @@ public class Bullet : MonoBehaviour
 
             for (float i = 0; i < 60; i += Precision)
             {
-                predictedPosition += asteroid.FallVector * Precision;
+                predictedPosition += targetAsteroid.FallVector * Precision;
                 distance = Vector2.Distance(transform.position, predictedPosition);
                 if (Bullet_Speed * i >= distance)
                 {
@@ -42,6 +41,7 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
+        if (go_Target == null) Destroy(gameObject);
         if (Homing)
         {
             transform.position = Vector3.MoveTowards(transform.position, go_Target.transform.position, Bullet_Speed * Time.deltaTime);

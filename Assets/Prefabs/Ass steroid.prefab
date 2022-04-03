@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4804528784838409106}
   - component: {fileID: 4804528784838409107}
   - component: {fileID: 4804528784838409105}
-  m_Layer: 0
+  - component: {fileID: 1629769750187414646}
+  m_Layer: 6
   m_Name: Ass steroid
-  m_TagString: Untagged
+  m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,5 +100,21 @@ MonoBehaviour:
   FallVector: {x: -1000, y: -1000}
   height: 100
   fallSpeed: -1
-  moveSpeed: 10
   secondsToFall: -1
+  health: 10
+--- !u!58 &1629769750187414646
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4804528784838409100}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
