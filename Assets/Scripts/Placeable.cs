@@ -26,11 +26,11 @@ public class Placeable : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && is_Placeable)
             {
                 is_Placing = false;
-                BuildManager.Instance.StopPlacing(false);
+                BuildManager.Instance.StopPlacing();
             }
             if (Input.GetMouseButtonDown(1))
             {
-                BuildManager.Instance.StopPlacing(true);
+                BuildManager.Instance.CancelPlacing();
                 Destroy(this.gameObject);
             }
         }

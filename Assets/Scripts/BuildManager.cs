@@ -30,15 +30,18 @@ public class BuildManager : MonoBehaviour
         go_currentPlacingTurret.GetComponent<Gun>().enabled = false;
         placingCost = turret.cost;
     }
-    public void StopPlacing(bool is_Canceled)
+    public void StopPlacing()
     {
         placedTurrets.Add(go_currentPlacingTurret);
         placedTurrets.ForEach(x => x.transform.Find("Range").GetComponent<SpriteRenderer>().enabled = false);
         go_currentPlacingTurret.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         go_currentPlacingTurret.GetComponent<BoxCollider2D>().isTrigger = false;
         go_currentPlacingTurret.GetComponent<Gun>().enabled = true;
-        if (is_Canceled) return;
 
         resourceManager.ChangeCurrency(-placingCost);
+    }
+    public void CancelPlacing()
+    {
+        placedTurrets.ForEach(x => x.transform.Find("Range").GetComponent<SpriteRenderer>().enabled = false);
     }
 }
