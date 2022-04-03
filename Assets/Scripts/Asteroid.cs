@@ -18,7 +18,7 @@ public class Asteroid : MonoBehaviour
 
     public Sprite[] spr_Asteroids;
 
-    public Resource resource;
+    public GameObject go_resource;
 
     public void SetUpAsteroid(Vector2 _FallVector, Vector2 LandingPosition, float _health, float _secondsToFall)
     {
@@ -51,6 +51,8 @@ public class Asteroid : MonoBehaviour
         }
         if (health <= 0)
         {
+            var resource = Instantiate(go_resource);
+            resource.transform.position = transform.position;
             Destroy(this.gameObject);
             return;
         }
