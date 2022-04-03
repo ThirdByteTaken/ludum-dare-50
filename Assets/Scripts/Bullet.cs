@@ -37,6 +37,9 @@ public class Bullet : MonoBehaviour
 
             targetPos = predictedPosition;
         }
+
+        Vector2 direction = ((Vector2)targetPos - (Vector2)transform.position).normalized;
+        transform.up = direction;
     }
 
     void Update()
