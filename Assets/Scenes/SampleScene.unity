@@ -1333,6 +1333,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Money: 10
+  go_Resources:
+  - {fileID: 4760332079198973310, guid: c88f6a21132254f99960bac504da5c86, type: 3}
+  - {fileID: 3752668486799551716, guid: cc160896374454c3b9d2f94f145c27ed, type: 3}
+  - {fileID: 4061421420159203894, guid: 7606d6e215c4a4243a726643d9dd041c, type: 3}
+  - {fileID: 4982256172240435473, guid: ad15e642d37c3483db4d82a530e46dd9, type: 3}
   txt_Money: {fileID: 1071757775}
   txt_ResourceGain: {fileID: 978069833}
   anim_ResourceGain: {fileID: 978069832}
