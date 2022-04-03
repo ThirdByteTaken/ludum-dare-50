@@ -43,8 +43,6 @@ public class Asteroid : MonoBehaviour
         sr_Asteroid.color = new Color(1 - (height / 100f), sr_Asteroid.color.g, sr_Asteroid.color.b);
         sr_Asteroid.sortingOrder = (int)height;
 
-        sr_Asteroid.sprite = spr_Asteroids[Mathf.RoundToInt((health / startingHealth) * (spr_Asteroids.Length - 1))];
-
         if (height <= 0)
         {
             Destroy(this.gameObject);
@@ -54,6 +52,7 @@ public class Asteroid : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        sr_Asteroid.sprite = spr_Asteroids[Mathf.RoundToInt((health / startingHealth) * (spr_Asteroids.Length - 1))];
     }
 
 }
