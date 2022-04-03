@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4804528784838409100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 32, y: 32, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -102,6 +102,10 @@ MonoBehaviour:
   fallSpeed: -1
   secondsToFall: -1
   health: 10
+  spr_Asteroids:
+  - {fileID: 21300000, guid: 020e6157a61544874b179746431fd0af, type: 3}
+  - {fileID: 21300000, guid: 28df3698b03f94657b68fa61bb2b0eb0, type: 3}
+  - {fileID: 21300000, guid: 093b431ae28e64caa9820017b03b446e, type: 3}
 --- !u!58 &1629769750187414646
 CircleCollider2D:
   m_ObjectHideFlags: 0

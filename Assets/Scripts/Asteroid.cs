@@ -11,7 +11,14 @@ public class Asteroid : MonoBehaviour
 
     public float secondsToFall;
     public float health;
+
+    float startingHealth;
+
     bool ready = false;
+
+    public Sprite[] spr_Asteroids;
+
+
     public void SetUpAsteroid(Vector2 _FallVector, Vector2 LandingPosition, float _health, float _secondsToFall)
     {
         FallVector = _FallVector;
@@ -19,7 +26,9 @@ public class Asteroid : MonoBehaviour
         secondsToFall = _secondsToFall;
         fallSpeed = 100 / secondsToFall; // After seconds to fall time, height will be zero
         transform.position = LandingPosition - (FallVector * secondsToFall);// new Vector2(LandingPosition.x-(FallVector.x * secondsToFall), LandingPosition.y-(FallVector.y * secondsToFall));
+        transform.Rotate(new Vector3(0, 0, Random.Range(0, 90)));
         health = _health;
+        startingHealth = health;
         ready = true;
     }
 
@@ -33,6 +42,9 @@ public class Asteroid : MonoBehaviour
         height -= fallSpeed * Time.deltaTime;
         sr_Asteroid.color = new Color(1 - (height / 100f), sr_Asteroid.color.g, sr_Asteroid.color.b);
         sr_Asteroid.sortingOrder = (int)height;
+
+        sr_Asteroid.sprite = spr_Asteroids[Mathf.RoundToInt((health / startingHealth) * (spr_Asteroids.Length - 1))];
+
         if (height <= 0)
         {
             Destroy(this.gameObject);
@@ -43,4 +55,5 @@ public class Asteroid : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
 }
