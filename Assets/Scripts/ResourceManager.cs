@@ -40,7 +40,7 @@ public class ResourceManager : MonoBehaviour
 
     public GameObject RandomResource() // Weighted odds
     {
-        GameObject[] list = { go_Resources[0], go_Resources[0], go_Resources[1], go_Resources[1], go_Resources[2], go_Resources[2], go_Resources[3], }; // Last one is gold
+        GameObject[] list = { null, null, go_Resources[1], go_Resources[1], go_Resources[2], go_Resources[2], go_Resources[3], }; // Last one is gold
         return list[Random.Range(0, list.Length)];
 
     }
