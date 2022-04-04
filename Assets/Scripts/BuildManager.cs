@@ -11,11 +11,12 @@ public class BuildManager : MonoBehaviour
     public GameObject go_BuildButton;
     List<GameObject> go_placedTurrets = new List<GameObject>();
     GameObject go_currentPlacingTurret;
+    public GameObject go_Tutorial;
     int placingRock;
     int placingWood;
     int placingIron;
     int placingGold;
-
+    bool is_tutorialOver;
     void Awake()
     {
         Instance = this;
@@ -34,6 +35,7 @@ public class BuildManager : MonoBehaviour
 
     public void BuyObject(Turret turret)
     {
+        if (!is_tutorialOver) go_Tutorial.transform.GetChild(1).gameObject.SetActive(true);
         if (resourceManager.Rock < turret.RockCost || resourceManager.Wood < turret.WoodCost || resourceManager.Iron < turret.IronCost || resourceManager.Gold < turret.GoldCost)
         {
             anim_CurrentButton.SetTrigger("CantBuild");
@@ -54,6 +56,7 @@ public class BuildManager : MonoBehaviour
     }
     public void StopPlacing()
     {
+        if (!is_tutorialOver) go_Tutorial.SetActive(false);
         // Update Pricing        
         var turret = go_currentPlacingTurret.GetComponent<Gun>().turret;
         if (turret.RockCost > 0) turret.RockCost = Mathf.Clamp(turret.RockCost + 5, 0, 99);
@@ -84,6 +87,7 @@ public class BuildManager : MonoBehaviour
 
     public void ShowBuildMenu()
     {
+        if (!is_tutorialOver) go_Tutorial.transform.GetChild(0).gameObject.SetActive(false);
         go_BuildButton.SetActive(false);
         go_BuildMenu.SetActive(true);
     }

@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance;
     private Rigidbody2D rb_Player;
     public float moveSpeed;
     public float camSpeed;
     public float animSpeed;
-    public int moveAxis = -1;// -1: stationary, 0: Vertical, 1: Horizontal    
+    public int moveAxis = -1;// -1: stationary, 0: Vertical, 1: Horizontal        
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
+
         rb_Player = this.GetComponent<Rigidbody2D>();
         anim_Player = this.GetComponent<Animator>();
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
 
+    public static CameraController Instance;
     [SerializeField]
     GameObject go_Player;
 
@@ -17,7 +18,14 @@ public class CameraController : MonoBehaviour
     const int Cam_Move_Threshold = 26; // How far the camera trails behind
 
     const float Cam_Speed = 3.0f;
-
+    void Awake()
+    {
+        Instance = this;
+    }
+    public void SetTarget(GameObject target)
+    {
+        go_Player = target;
+    }
     // Update is called once per frame
     public void UpdatePosition()
     {

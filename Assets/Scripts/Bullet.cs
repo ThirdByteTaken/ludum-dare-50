@@ -87,6 +87,7 @@ public class Bullet : MonoBehaviour
             }
 
             ast_Collider.health -= damage;
+            ast_Collider.HitSound.Play();
             Destroy(gameObject);
         }
     }

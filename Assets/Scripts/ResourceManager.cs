@@ -27,7 +27,7 @@ public class ResourceManager : MonoBehaviour
     }
     void Start()
     {
-
+        Rock = 15;
     }
 
     public void ChangeResource(int deltaResource, int resourceID, ref int resource)

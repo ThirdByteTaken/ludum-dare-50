@@ -5,6 +5,7 @@ using UnityEngine;
 public class Asteroid : MonoBehaviour
 {
     public SpriteRenderer sr_Asteroid;
+    public AudioSource HitSound;
     public Vector2 FallVector;
     public float height;
     public float fallSpeed;
@@ -27,6 +28,7 @@ public class Asteroid : MonoBehaviour
     {
         FallVector = _FallVector;
         sr_Asteroid = GetComponent<SpriteRenderer>();
+        HitSound = GetComponent<AudioSource>();
         secondsToFall = _secondsToFall;
         fallSpeed = 100 / secondsToFall; // After seconds to fall time, height will be zero
         transform.position = LandingPosition - (FallVector * secondsToFall);// new Vector2(LandingPosition.x-(FallVector.x * secondsToFall), LandingPosition.y-(FallVector.y * secondsToFall));
@@ -54,9 +56,8 @@ public class Asteroid : MonoBehaviour
         if (height <= 0)
         {
             ExplosionManager.Instance.Explode(transform.position);
-
-            AsteroidManager.Instace.DestroyAsteroid(gameObject);
-            cam_Main.transform.position = gameObject.transform.position;
+            AsteroidManager.Instace.DestroyAsteroid(gameObject, true);
+            //cam_Main.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -10);
 
         }
         if (health <= 0)
@@ -67,7 +68,7 @@ public class Asteroid : MonoBehaviour
                 resource.GetComponent<Resource>().StartMoving();
                 resource.transform.position = transform.position;
             }
-            AsteroidManager.Instace.DestroyAsteroid(gameObject);
+            AsteroidManager.Instace.DestroyAsteroid(gameObject, false);
             return;
         }
         sr_Asteroid.sprite = spr_Asteroids[Mathf.RoundToInt((health / startingHealth) * (spr_Asteroids.Length - 1))];

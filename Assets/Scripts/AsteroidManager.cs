@@ -55,13 +55,13 @@ public class AsteroidManager : MonoBehaviour
         Invoke("SpawnAsteroid", 60 / SpawnCurve.Evaluate(AsteroidsDestroyed));
     }
 
-    public void DestroyAsteroid(GameObject asteroid)
+    public void DestroyAsteroid(GameObject asteroid, bool is_gameOver)
     {
         GameObject explosion = Instantiate(s_go_ExplosionPrefab, asteroid.transform.position, asteroid.transform.rotation);
         AsteroidsDestroyed++;
         Destroy(asteroid);
         Destroy(explosion, 0.5f);
-        Invoke("EndGame", 2f);
+        if (is_gameOver) Invoke("EndGame", 2f);
     }
     void EndGame()
     {
