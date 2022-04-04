@@ -106,6 +106,7 @@ MonoBehaviour:
   Bullet_Speed: 64
   Homing: 0
   bullet: {fileID: 2221394275494579366, guid: 7ae6d4d68c354b34caa44ee4fb04f121, type: 3}
+  turret: {fileID: 11400000, guid: a143ed261f8005a438146f06327e0a6e, type: 2}
   ast_PossibleTargets: []
   ast_Target: {fileID: 0}
 --- !u!50 &8049986797393118466
