@@ -2063,6 +2063,75 @@ MonoBehaviour:
   moveSpeed: 20
   go_AsteroidPrefab: {fileID: 4804528784838409100, guid: fe7bb2fbd59322d41a1ac8af26550d2c, type: 3}
   go_ExplosionPrefab: {fileID: 3240945319975213522, guid: 14c6876c9fbd562449ac3d0ad4b3f1ea, type: 3}
+  SpawnCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.0036213547
+      value: 11.998935
+      inSlope: -0.004665728
+      outSlope: -0.004665728
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.22287859
+    - serializedVersion: 3
+      time: 29.906158
+      value: 30.650982
+      inSlope: 1.3093444
+      outSlope: 1.3093444
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 50.01596
+      value: 60.33625
+      inSlope: 0.7226381
+      outSlope: 0.7226381
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100.10419
+      value: 120.251366
+      inSlope: 0.36965972
+      outSlope: 0.36965972
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 417.52536
+      value: 216.7953
+      inSlope: 0.0809348
+      outSlope: 0.0809348
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 500.01138
+      value: 301.00797
+      inSlope: 1.6087322
+      outSlope: 1.6087322
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 999.0051
+      value: 1198.5964
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   spr_Asteroids:
   - {fileID: 21300000, guid: 020e6157a61544874b179746431fd0af, type: 3}
   - {fileID: 21300000, guid: 28df3698b03f94657b68fa61bb2b0eb0, type: 3}

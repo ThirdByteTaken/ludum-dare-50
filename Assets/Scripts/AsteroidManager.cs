@@ -18,6 +18,10 @@ public class AsteroidManager : MonoBehaviour
 
     public static AsteroidManager Instace;
 
+    public AnimationCurve SpawnCurve;
+
+    public static int AsteroidsDestroyed;
+
     public Sprite[] spr_Asteroids;
     bool isSpawning;
 
@@ -26,6 +30,7 @@ public class AsteroidManager : MonoBehaviour
         s_go_ExplosionPrefab = go_ExplosionPrefab;
         Instace = this;
         isSpawning = false;
+        AsteroidsDestroyed = 0;
     }
 
     public void StartSpawning()
@@ -47,12 +52,13 @@ public class AsteroidManager : MonoBehaviour
         float newSecondsToFall = Random.Range(minFallTime, maxFallTime);
         newAsteroid.GetComponent<Asteroid>().go_resource = ResourceManager.Instance.RandomResource();
         newAsteroid.GetComponent<Asteroid>().SetUpAsteroid(newFallVector, newLandingPosition, newHealth, newSecondsToFall);
-        Invoke("SpawnAsteroid", 1);
+        Invoke("SpawnAsteroid", SpawnCurve.Evaluate(AsteroidsDestroyed) / 60f);
     }
 
     public static void DestroyAsteroid(GameObject asteroid)
     {
         GameObject explosion = Instantiate(s_go_ExplosionPrefab, asteroid.transform.position, asteroid.transform.rotation);
+        AsteroidsDestroyed++;
         Destroy(asteroid);
         Destroy(explosion, 0.5f);
     }
