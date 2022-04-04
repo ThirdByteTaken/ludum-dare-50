@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class AsteroidManager : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class AsteroidManager : MonoBehaviour
     public AnimationCurve RadiusCurve;
 
     public static int AsteroidsDestroyed;
+
+    public TMP_Text txt_Score;
 
     public Sprite[] spr_Asteroids;
     bool isSpawning;
@@ -63,6 +66,7 @@ public class AsteroidManager : MonoBehaviour
     {
         GameObject explosion = Instantiate(s_go_ExplosionPrefab, asteroid.transform.position, asteroid.transform.rotation);
         AsteroidsDestroyed++;
+        txt_Score.text = string.Format("{0:000000}", AsteroidsDestroyed);
         Destroy(asteroid);
         Destroy(explosion, 0.5f);
         if (is_gameOver) Invoke("EndGame", 2f);
