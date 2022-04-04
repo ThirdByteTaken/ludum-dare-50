@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1149828174744712110}
   - component: {fileID: -5060225453955379737}
   m_Layer: 0
-  m_Name: Simple Turret
+  m_Name: Sniper Turret
   m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 816752451
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 71e363cf1efc241258a3242593ec87a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 565451144b4cd2045b0ff321e280f23b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,9 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go_Head: {fileID: 3364442626930139349}
-  FireSpeed: 1
-  Damage: 10
-  Bullet_Speed: 64
+  FireSpeed: 3
+  Damage: 20
+  Bullet_Speed: 128
   Homing: 0
   bullet: {fileID: 2221394275494579366, guid: 7ae6d4d68c354b34caa44ee4fb04f121, type: 3}
   ast_PossibleTargets: []
@@ -160,7 +160,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 32, y: 32}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 32, y: 32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -240,7 +240,7 @@ SpriteRenderer:
   m_SortingLayerID: 816752451
   m_SortingLayer: 2
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: d8eb44f2035a44db4bfb8e73df749039, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 825ebdb4a4601af40ade41731243876f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -280,7 +280,7 @@ Transform:
   m_GameObject: {fileID: 3364442627494817041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 42.41836}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 3364442625970758727}
   m_RootOrder: 1
@@ -326,7 +326,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 95522cce91eea478aacac4e1bb358231, type: 3}
-  m_Color: {r: 1, g: 0.83978903, b: 0.19215685, a: 0.23529412}
+  m_Color: {r: 0.3205198, g: 1, b: 0, a: 0.11764706}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

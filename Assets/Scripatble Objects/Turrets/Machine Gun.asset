@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772677e0254e7a34386b4ec378399a72, type: 3}
-  m_Name: Simple Turret
+  m_Name: Machine Gun
   m_EditorClassIdentifier: 
-  cost: 10
-  prefab: {fileID: 3364442625970758730, guid: 6ac668ee95eb18a418bdad5d1413da83, type: 3}
+  RockCost: 20
+  WoodCost: 10
+  IronCost: 10
+  GoldCost: 5
+  prefab: {fileID: 3364442625970758730, guid: ee3014f4b6075b542bae102aef9b0ed9, type: 3}
