@@ -42,16 +42,18 @@ public class AsteroidDetector : MonoBehaviour
         }
     }
 
-    /*void OnTriggerStay2D(Collider2D collider)
+    void OnTriggerStay2D(Collider2D collider)
     {
 
         if (collider.CompareTag("Asteroid"))
         {
-            if (collider.GetComponent<Asteroid>().predictedHealth > 0)
+            Asteroid ast_gunBestTarget = gun.BestTarget();
+            if (ast_gunBestTarget != null)
             {
-                gun.AimAtTarget(collider.gameObject);
+                gun.AimAtTarget(gun.BestTarget().gameObject);
             }
+
         }
-    }*/
+    }
 
 }

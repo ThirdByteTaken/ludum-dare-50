@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        print("sa " + Screen.safeArea);
+        print("h " + Screen.height);
+
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
         float xMovement = horizontalInput * moveSpeed * Time.deltaTime;
