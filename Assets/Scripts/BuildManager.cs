@@ -9,6 +9,7 @@ public class BuildManager : MonoBehaviour
     public GameObject go_BuildButton;
     List<GameObject> go_placedTurrets = new List<GameObject>();
     GameObject go_currentPlacingTurret;
+
     int placingRock;
     int placingWood;
     int placingIron;
@@ -50,14 +51,7 @@ public class BuildManager : MonoBehaviour
     }
     public void StopPlacing()
     {
-        // Update Pricing        
-        var turret = go_currentPlacingTurret.GetComponent<Gun>().turret;
-        if (turret.RockCost > 0) turret.RockCost += 5;
-        if (turret.WoodCost > 0) turret.WoodCost += 5;
-        if (turret.IronCost > 0) turret.IronCost += 5;
-        if (turret.GoldCost > 0) turret.GoldCost += 5;
 
-        turret.text.text = "<u><i>" + turret.name + "</i></u> " + turret.RockCost + " rock\t " + turret.WoodCost + " wood " + turret.IronCost + " iron\t " + turret.GoldCost + " gold range  -\t" + turret.Range + "\t\tshot speed -\t" + turret.ShotSpeed + " damage -\t" + turret.Damage + "\t\tfire speed -\t" + turret.FireSpeed;
         go_placedTurrets.Add(go_currentPlacingTurret);
         go_placedTurrets.ForEach(x => x.transform.Find("Range").GetComponent<SpriteRenderer>().enabled = false);
         go_currentPlacingTurret.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
@@ -71,6 +65,11 @@ public class BuildManager : MonoBehaviour
         if (placingGold != 0) ResourceManager.Instance.ChangeResource(-placingGold, 3, ref ResourceManager.Instance.Gold);
         AsteroidManager.Instace.StartSpawning();
         HideBuildMenu();
+
+        // Update Pricing        
+        var turret = go_currentPlacingTurret.GetComponent<Gun>().turret;
+
+        go_BuildMenu.transform.Find(turret.name).GetComponent<TMPro.TMP_Text>().text = "<u><i>" + turret.name + "</i></u> " + turret.RockCost + " rock\t " + turret.WoodCost + " wood " + turret.IronCost + " iron\t " + turret.GoldCost + " gold range  -\t" + turret.Range + "\t\tshot speed -\t" + turret.ShotSpeed + " damage -\t" + turret.Damage + "\t\tfire speed -\t" + turret.FireSpeed;
     }
     public void CancelPlacing()
     {

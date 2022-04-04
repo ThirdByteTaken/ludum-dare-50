@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 [CreateAssetMenu]
 public class Turret : ScriptableObject
 {
@@ -14,5 +13,4 @@ public class Turret : ScriptableObject
     public string Damage;
     public string FireSpeed;
     public GameObject prefab;
-    public TMP_Text text;
 }
