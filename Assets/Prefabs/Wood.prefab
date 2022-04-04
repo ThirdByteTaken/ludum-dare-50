@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4061421420159203891}
   - component: {fileID: 4061421420159203888}
   - component: {fileID: 4061421420159203889}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resource: 1
+  Force: {x: 0, y: 0}
 --- !u!50 &4061421420159203888
 Rigidbody2D:
   serializedVersion: 4

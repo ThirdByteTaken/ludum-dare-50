@@ -50,7 +50,7 @@ public class BuildManager : MonoBehaviour
     }
     public void StopPlacing()
     {
-        // Update Pricing
+        // Update Pricing        
         var turret = go_currentPlacingTurret.GetComponent<Gun>().turret;
         if (turret.RockCost > 0) turret.RockCost += 5;
         if (turret.WoodCost > 0) turret.WoodCost += 5;

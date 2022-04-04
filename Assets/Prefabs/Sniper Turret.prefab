@@ -106,6 +106,7 @@ MonoBehaviour:
   Bullet_Speed: 128
   Homing: 0
   bullet: {fileID: 2221394275494579366, guid: 7ae6d4d68c354b34caa44ee4fb04f121, type: 3}
+  turret: {fileID: 11400000, guid: d08134e932e6fd5428b040373f4f4c8f, type: 2}
   ast_PossibleTargets: []
   ast_Target: {fileID: 0}
 --- !u!50 &8049986797393118466
@@ -160,7 +161,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 32, y: 32}
     newSize: {x: 32, y: 32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

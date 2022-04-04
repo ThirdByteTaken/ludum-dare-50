@@ -30,10 +30,9 @@ public class Resource : MonoBehaviour
         rigidBody.velocity = Vector2.zero;
         Invoke("Despawn", 10f);
     }
-
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnCollisionEnter2D(Collision2D collider)
     {
-        if (collider.CompareTag("Player"))
+        if (collider.gameObject.CompareTag("Player"))
         {
 
             switch (resource)
