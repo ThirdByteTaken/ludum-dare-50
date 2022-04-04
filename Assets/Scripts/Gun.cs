@@ -30,8 +30,10 @@ public class Gun : MonoBehaviour
     [HideInInspector]
     public List<Asteroid> ast_PossibleTargets = new List<Asteroid>();
     public Asteroid ast_Target;
+    AudioSource ShootSound;
     void Start()
     {
+        ShootSound = GetComponent<AudioSource>();
         cam_Main = Camera.main;
         Invoke("AttemptFire", FireSpeed);
     }
@@ -67,6 +69,7 @@ public class Gun : MonoBehaviour
             shotBullet.damage = Damage;
             shotBullet.Bullet_Speed = Bullet_Speed;
             shot.transform.position = go_Head.transform.position;
+            ShootSound.Play();
         }
         Invoke("AttemptFire", FireSpeed);
     }

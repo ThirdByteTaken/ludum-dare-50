@@ -11,6 +11,11 @@ public class Resource : MonoBehaviour
     public Resources resource;
     public Vector2 Force;
 
+
+    void Start()
+    {
+
+    }
     public void StartMoving(Vector2 rotation, float Force)
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -51,6 +56,7 @@ public class Resource : MonoBehaviour
                     break;
 
             }
+            AudioManager.Instance.ResourcePickedUpSound();
             Destroy(this.gameObject);
         }
     }
