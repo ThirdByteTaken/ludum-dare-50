@@ -84,7 +84,7 @@ public class BuildManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-
+            SceneLoader.TogglePause();
         }
     }
 }

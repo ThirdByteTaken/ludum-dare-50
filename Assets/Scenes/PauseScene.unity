@@ -798,10 +798,10 @@ RectTransform:
   m_Father: {fileID: 2073585709}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 1}
+  m_SizeDelta: {x: 400, y: 225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1922973715
 MonoBehaviour:
@@ -876,8 +876,8 @@ MonoBehaviour:
   m_RefResolutionY: 255
   m_UpscaleRT: 0
   m_PixelSnapping: 0
-  m_CropFrameX: 1
-  m_CropFrameY: 1
+  m_CropFrameX: 0
+  m_CropFrameY: 0
   m_StretchFill: 0
 --- !u!20 &2020527139
 Camera:
@@ -906,7 +906,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 112.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

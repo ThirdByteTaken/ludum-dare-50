@@ -50,7 +50,7 @@ public class SceneLoader : MonoBehaviour
     }
 
     public static bool isPaused = false;
-    public void TogglePause()
+    public static void TogglePause()
     {
         if (isPaused)
         {
