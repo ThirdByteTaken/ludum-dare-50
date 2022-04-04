@@ -59,7 +59,7 @@ public class BuildManager : MonoBehaviour
         if (turret.RockCost > 0) turret.RockCost = Mathf.Clamp(turret.RockCost + 5, 0, 99);
         if (turret.WoodCost > 0) turret.WoodCost = Mathf.Clamp(turret.WoodCost + 5, 0, 99);
         if (turret.IronCost > 0) turret.IronCost = Mathf.Clamp(turret.IronCost + 5, 0, 99);
-        if (turret.GoldCost > 0) turret.GoldCost = Mathf.Clamp(turret.GoldCost + 5, 0, 99);
+        if (turret.GoldCost > 0) turret.GoldCost = Mathf.Clamp(turret.GoldCost + 3, 0, 99);
 
         go_BuildMenu.transform.Find(turret.name).GetChild(0).GetComponent<TMPro.TMP_Text>().text = "<u><i>" + turret.name + "</i></u>\n" + turret.RockCost + " rock\t " + string.Format("{0:00}", turret.WoodCost) + " wood\n" + string.Format("{0:00}", turret.IronCost) + " iron\t " + string.Format("{0:00}", turret.GoldCost) + " gold\nrange  -\t" + turret.Range + "\t\tshot speed -\t" + turret.ShotSpeed + "\ndamage -\t" + turret.Damage + "\t\tfire speed -\t" + turret.FireSpeed;
         go_placedTurrets.Add(go_currentPlacingTurret);
