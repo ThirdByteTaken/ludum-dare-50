@@ -50,7 +50,7 @@ public class BuildManager : MonoBehaviour
         go_currentPlacingTurret.GetComponent<BoxCollider2D>().isTrigger = false;
         go_currentPlacingTurret.GetComponent<Gun>().enabled = true;
 
-        resourceManager.ChangeCurrency(-placingCost);
+        //resourceManager.ChangeCurrency(-placingCost);
         HideBuildMenu();
     }
     public void CancelPlacing()

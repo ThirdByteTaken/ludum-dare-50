@@ -19,6 +19,12 @@ public class AsteroidDetector : MonoBehaviour
         if (collider.CompareTag("Asteroid"))
         {
             targets++;
+            gun.ast_PossibleTargets.Add(collider.GetComponent<Asteroid>());
+            Asteroid ast_gunBestTarget = gun.BestTarget();
+            if (ast_gunBestTarget != null)
+            {
+                gun.AimAtTarget(gun.BestTarget().gameObject);
+            }
         }
     }
 
@@ -27,17 +33,25 @@ public class AsteroidDetector : MonoBehaviour
         if (collider.CompareTag("Asteroid"))
         {
             targets--;
-            gun.go_Target = null;
+            gun.ast_PossibleTargets.Remove(collider.GetComponent<Asteroid>());
+            Asteroid ast_gunBestTarget = gun.BestTarget();
+            if (ast_gunBestTarget != null)
+            {
+                gun.AimAtTarget(gun.BestTarget().gameObject);
+            }
         }
     }
 
-    void OnTriggerStay2D(Collider2D collider)
+    /*void OnTriggerStay2D(Collider2D collider)
     {
 
         if (collider.CompareTag("Asteroid"))
         {
-            gun.AimAtTarget(collider.gameObject);
+            if (collider.GetComponent<Asteroid>().predictedHealth > 0)
+            {
+                gun.AimAtTarget(collider.gameObject);
+            }
         }
-    }
+    }*/
 
 }
