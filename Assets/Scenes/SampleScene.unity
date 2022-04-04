@@ -2828,9 +2828,9 @@ GameObject:
   - component: {fileID: 979623707}
   - component: {fileID: 979623706}
   - component: {fileID: 979623708}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mine
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4014,7 +4014,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11.2
+  m_fontSize: 11.25
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

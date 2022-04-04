@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4760332079198973305}
   - component: {fileID: 4760332079198973304}
   - component: {fileID: 4760332079198973311}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Iron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resource: 2
+  Force: {x: 0, y: 0}
 --- !u!50 &4760332079198973304
 Rigidbody2D:
   serializedVersion: 4
@@ -129,7 +130,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
