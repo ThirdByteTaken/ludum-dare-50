@@ -79,4 +79,12 @@ public class BuildManager : MonoBehaviour
         go_BuildButton.SetActive(true);
         go_BuildMenu.SetActive(false);
     }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+
+        }
+    }
 }
