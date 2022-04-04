@@ -10,7 +10,6 @@ public class ResourceManager : MonoBehaviour
 
     public static ResourceManager Instance;
 
-    public int Money;
     public int Gold, Iron, Wood, Rock;
 
 
@@ -28,17 +27,9 @@ public class ResourceManager : MonoBehaviour
     }
     void Start()
     {
-        Money = 10; // TODO fix
-        Invoke("GainCurrency", Money_Gain_Time);
+
     }
 
-    void GainCurrency()
-    {
-        print("pre " + Rock);
-        ChangeResource(Money_Gain_Amount, 0, ref Rock);
-        print("post " + Rock);
-        Invoke("GainCurrency", Money_Gain_Time);
-    }
     public void ChangeResource(int deltaResource, int resourceID, ref int resource)
     {
         resource += deltaResource;

@@ -57,6 +57,7 @@ public class Asteroid : MonoBehaviour
         if (health <= 0)
         {
             var resource = Instantiate(go_resource);
+            resource.GetComponent<Resource>().StartMoving();
             resource.transform.position = transform.position;
             AsteroidManager.DestroyAsteroid(gameObject);
             return;

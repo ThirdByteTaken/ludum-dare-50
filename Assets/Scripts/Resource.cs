@@ -9,15 +9,25 @@ public class Resource : MonoBehaviour
     const int Max_Speed = 90;
 
     public Resources resource;
+    public Vector2 Force;
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+    }
+    public void StartMoving(Vector2 rotation, float Force)
+    {
+        rigidBody = GetComponent<Rigidbody2D>();
+        transform.up = rotation;
+        rigidBody.AddForce(Force * transform.up, ForceMode2D.Impulse);
+        Invoke("StopMoving", 1f);
+    }
+    public void StartMoving()
+    {
         transform.up = new Vector2(Random.Range(-320, 320), Random.Range(-320, 320));
         rigidBody.AddForce(Random.Range(Min_Speed, Max_Speed) * transform.up, ForceMode2D.Impulse);
         Invoke("StopMoving", 1f);
     }
-
     void StopMoving()
     {
         rigidBody.velocity = Vector2.zero;
