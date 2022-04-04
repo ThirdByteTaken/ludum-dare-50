@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 7364653}
   - component: {fileID: 7364656}
   m_Layer: 5
-  m_Name: Buy sniper
+  m_Name: Sniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.45
+  m_fontSize: 22.5
   m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1715,7 +1715,7 @@ GameObject:
   - component: {fileID: 614555768}
   - component: {fileID: 614555767}
   m_Layer: 5
-  m_Name: Buy rocket
+  m_Name: Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2211,7 +2211,7 @@ GameObject:
   - component: {fileID: 696244433}
   - component: {fileID: 696244432}
   m_Layer: 5
-  m_Name: Buy machine gun
+  m_Name: Machine Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2376,7 +2376,7 @@ GameObject:
   - component: {fileID: 799439127}
   - component: {fileID: 799439130}
   m_Layer: 5
-  m_Name: Buy turret
+  m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3658,7 +3658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1358911433
 RectTransform:
   m_ObjectHideFlags: 0

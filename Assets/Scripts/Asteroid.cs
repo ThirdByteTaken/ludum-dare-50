@@ -21,6 +21,8 @@ public class Asteroid : MonoBehaviour
 
     public GameObject go_resource;
 
+    Camera cam_Main;
+
     public void SetUpAsteroid(Vector2 _FallVector, Vector2 LandingPosition, float _health, float _secondsToFall)
     {
         FallVector = _FallVector;
@@ -36,6 +38,7 @@ public class Asteroid : MonoBehaviour
     void Start()
     {
         predictedHealth = health;
+        cam_Main = Camera.main;
     }
     // Update is called once per frame
     void Update()
@@ -52,7 +55,8 @@ public class Asteroid : MonoBehaviour
         {
             ExplosionManager.Instance.Explode(transform.position);
             AsteroidManager.DestroyAsteroid(gameObject);
-            print("you got blown up");
+            cam_Main.transform.position = gameObject.transform.position;
+            Invoke("EndGame", 4f);
         }
         if (health <= 0)
         {
@@ -66,6 +70,11 @@ public class Asteroid : MonoBehaviour
             return;
         }
         sr_Asteroid.sprite = spr_Asteroids[Mathf.RoundToInt((health / startingHealth) * (spr_Asteroids.Length - 1))];
+    }
+
+    void EndGame()
+    {
+        SceneLoader.PlayerDeath();
     }
 
 }

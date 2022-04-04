@@ -16,4 +16,9 @@ MonoBehaviour:
   WoodCost: 10
   IronCost: 10
   GoldCost: 5
+  Range: 10
+  ShotSpeed: 10
+  Damage: 05
+  FireSpeed: 90
   prefab: {fileID: 3364442625970758730, guid: ee3014f4b6075b542bae102aef9b0ed9, type: 3}
+  text: {fileID: 0}

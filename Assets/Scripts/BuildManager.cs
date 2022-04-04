@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager Instance;
@@ -14,7 +13,6 @@ public class BuildManager : MonoBehaviour
     int placingWood;
     int placingIron;
     int placingGold;
-
 
     void Awake()
     {
@@ -59,6 +57,7 @@ public class BuildManager : MonoBehaviour
         if (turret.IronCost > 0) turret.IronCost += 5;
         if (turret.GoldCost > 0) turret.GoldCost += 5;
 
+        turret.text.text = "<u><i>" + turret.name + "</i></u> " + turret.RockCost + " rock\t " + turret.WoodCost + " wood " + turret.IronCost + " iron\t " + turret.GoldCost + " gold range  -\t" + turret.Range + "\t\tshot speed -\t" + turret.ShotSpeed + " damage -\t" + turret.Damage + "\t\tfire speed -\t" + turret.FireSpeed;
         go_placedTurrets.Add(go_currentPlacingTurret);
         go_placedTurrets.ForEach(x => x.transform.Find("Range").GetComponent<SpriteRenderer>().enabled = false);
         go_currentPlacingTurret.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
