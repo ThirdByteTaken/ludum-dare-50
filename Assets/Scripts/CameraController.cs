@@ -11,13 +11,8 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     PlayerController playerController;
 
-    static int Max_Y = 207;
-    static int Max_X = 120;
-    void Start()
-    {
-        Max_X = 320 - (Screen.width / 4);
-        Max_Y = 320 - (Screen.height / 4);
-    }
+    static int Max_Y = 203;
+    static int Max_X = 112;
 
     const int Cam_Move_Threshold = 26; // How far the camera trails behind
 
