@@ -1607,9 +1607,9 @@ MonoBehaviour:
   Wood: 0
   Rock: 0
   go_Resources:
-  - {fileID: 4760332079198973310, guid: c88f6a21132254f99960bac504da5c86, type: 3}
   - {fileID: 3752668486799551716, guid: cc160896374454c3b9d2f94f145c27ed, type: 3}
   - {fileID: 4061421420159203894, guid: 7606d6e215c4a4243a726643d9dd041c, type: 3}
+  - {fileID: 4760332079198973310, guid: c88f6a21132254f99960bac504da5c86, type: 3}
   - {fileID: 4982256172240435473, guid: ad15e642d37c3483db4d82a530e46dd9, type: 3}
   txt_Resources:
   - {fileID: 954130005}
@@ -1619,7 +1619,7 @@ MonoBehaviour:
   txt_ResourceGains:
   - {fileID: 1845161037}
   - {fileID: 2144972380}
-  - {fileID: 2144972380}
+  - {fileID: 900896166}
   - {fileID: 1230750245}
   anim_ResourceGains:
   - {fileID: 1845161036}

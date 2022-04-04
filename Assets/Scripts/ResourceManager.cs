@@ -54,10 +54,3 @@ public class ResourceManager : MonoBehaviour
 
     }
 }
-enum ResourceTypes
-{
-    Rock,
-    Wood,
-    Iron,
-    Gold
-}

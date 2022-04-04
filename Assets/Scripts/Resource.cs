@@ -27,20 +27,22 @@ public class Resource : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
+
             switch (resource)
             {
+                case Resources.Rock:
+                    ResourceManager.Instance.ChangeResource(1, 0, ref ResourceManager.Instance.Rock);
+                    break;
                 case Resources.Wood:
-                    ResourceManager.Instance.Wood++;
+                    ResourceManager.Instance.ChangeResource(1, 1, ref ResourceManager.Instance.Wood);
                     break;
                 case Resources.Iron:
-                    ResourceManager.Instance.Iron++;
+                    ResourceManager.Instance.ChangeResource(1, 2, ref ResourceManager.Instance.Iron);
                     break;
                 case Resources.Gold:
-                    ResourceManager.Instance.Gold++;
+                    ResourceManager.Instance.ChangeResource(1, 3, ref ResourceManager.Instance.Gold);
                     break;
-                case Resources.Rock:
-                    ResourceManager.Instance.Rock++;
-                    break;
+
             }
             Destroy(this.gameObject);
         }
@@ -50,8 +52,9 @@ public class Resource : MonoBehaviour
 
 public enum Resources
 {
+    Rock,
     Wood,
     Iron,
-    Gold,
-    Rock
+    Gold
+
 }
