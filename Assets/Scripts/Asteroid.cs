@@ -54,9 +54,10 @@ public class Asteroid : MonoBehaviour
         if (height <= 0)
         {
             ExplosionManager.Instance.Explode(transform.position);
-            AsteroidManager.DestroyAsteroid(gameObject);
+
+            AsteroidManager.Instace.DestroyAsteroid(gameObject);
             cam_Main.transform.position = gameObject.transform.position;
-            Invoke("EndGame", .75f);
+
         }
         if (health <= 0)
         {
@@ -66,15 +67,12 @@ public class Asteroid : MonoBehaviour
                 resource.GetComponent<Resource>().StartMoving();
                 resource.transform.position = transform.position;
             }
-            AsteroidManager.DestroyAsteroid(gameObject);
+            AsteroidManager.Instace.DestroyAsteroid(gameObject);
             return;
         }
         sr_Asteroid.sprite = spr_Asteroids[Mathf.RoundToInt((health / startingHealth) * (spr_Asteroids.Length - 1))];
     }
 
-    void EndGame()
-    {
-        SceneLoader.PlayerDeath();
-    }
+
 
 }

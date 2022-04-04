@@ -52,6 +52,7 @@ public class SceneLoader : MonoBehaviour
     public static void PlayerDeath()
     {
         Time.timeScale = 1;
+        print("fds");
         SceneManager.LoadScene(4);
     }
 
