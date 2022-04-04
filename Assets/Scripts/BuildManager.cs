@@ -61,6 +61,7 @@ public class BuildManager : MonoBehaviour
         if (placingWood != 0) ResourceManager.Instance.ChangeResource(-placingWood, 1, ref ResourceManager.Instance.Wood);
         if (placingIron != 0) ResourceManager.Instance.ChangeResource(-placingIron, 2, ref ResourceManager.Instance.Iron);
         if (placingGold != 0) ResourceManager.Instance.ChangeResource(-placingGold, 3, ref ResourceManager.Instance.Gold);
+        AsteroidManager.Instace.StartSpawning();
         HideBuildMenu();
     }
     public void CancelPlacing()

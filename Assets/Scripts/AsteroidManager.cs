@@ -16,12 +16,25 @@ public class AsteroidManager : MonoBehaviour
     public GameObject go_ExplosionPrefab;
     private static GameObject s_go_ExplosionPrefab;
 
+    public static AsteroidManager Instace;
+
     public Sprite[] spr_Asteroids;
+    bool isSpawning;
+
     void Start()
     {
         s_go_ExplosionPrefab = go_ExplosionPrefab;
-        SpawnAsteroid();
+        Instace = this;
+        isSpawning = false;
+    }
 
+    public void StartSpawning()
+    {
+        if (!isSpawning)
+        {
+            isSpawning = true;
+            Invoke("SpawnAsteroid", 3);
+        }
     }
 
     void SpawnAsteroid()
