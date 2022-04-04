@@ -46,7 +46,7 @@ public class BuildManager : MonoBehaviour
         go_currentPlacingTurret.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         go_currentPlacingTurret.GetComponent<BoxCollider2D>().isTrigger = true;
         go_currentPlacingTurret.GetComponent<Gun>().enabled = false;
-        print("rock cost " + turret.RockCost);
+        go_BuildMenu.SetActive(false);
         placingRock = turret.RockCost;
         placingWood = turret.WoodCost;
         placingIron = turret.IronCost;
@@ -79,7 +79,7 @@ public class BuildManager : MonoBehaviour
     public void CancelPlacing()
     {
         go_placedTurrets.ForEach(x => x.transform.Find("Range").GetComponent<SpriteRenderer>().enabled = false);
-        HideBuildMenu();
+        ShowBuildMenu();
     }
 
     public void ShowBuildMenu()
