@@ -14,11 +14,13 @@ public class AsteroidManager : MonoBehaviour
     public float moveSpeed;
     public GameObject go_AsteroidPrefab;
     public GameObject go_ExplosionPrefab;
+    public GameObject go_RangeVisualizer;
     private static GameObject s_go_ExplosionPrefab;
 
     public static AsteroidManager Instace;
 
     public AnimationCurve SpawnCurve;
+    public AnimationCurve RadiusCurve;
 
     public static int AsteroidsDestroyed;
 
@@ -47,6 +49,8 @@ public class AsteroidManager : MonoBehaviour
         GameObject newAsteroid = Instantiate(go_AsteroidPrefab);
         newAsteroid.GetComponent<SpriteRenderer>().sprite = spr_Asteroids[Random.Range(0, spr_Asteroids.Length)];
         Vector2 newFallVector = new Vector2(Random.Range(-moveSpeed, moveSpeed), Random.Range(-moveSpeed, moveSpeed));
+        landingPositionsRadius = RadiusCurve.Evaluate(AsteroidsDestroyed);
+        go_RangeVisualizer.transform.localScale = Vector2.one * (1f / 32f) * (landingPositionsRadius / 32);
         Vector2 newLandingPosition = new Vector2(Random.Range(-landingPositionsRadius / 2, landingPositionsRadius / 2), Random.Range(-landingPositionsRadius / 2, landingPositionsRadius / 2));
         float newHealth = Random.Range(minHealth, maxHealth);
         float newSecondsToFall = Random.Range(minFallTime, maxFallTime);

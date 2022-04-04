@@ -56,6 +56,7 @@ public class Asteroid : MonoBehaviour
         if (height <= 0)
         {
             ExplosionManager.Instance.Explode(transform.position);
+            BuildManager.Instance.HideBuildMenu();
             AsteroidManager.Instace.DestroyAsteroid(gameObject, true);
             //cam_Main.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -10);
 
