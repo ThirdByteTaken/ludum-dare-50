@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PauseScene.unity
     guid: 775caf5e6942348219d4919fed42a8f4
+  - enabled: 1
+    path: Assets/Scenes/DeathScene.unity
+    guid: b35231d1939944de899c1e52534571e4
   m_configObjects: {}

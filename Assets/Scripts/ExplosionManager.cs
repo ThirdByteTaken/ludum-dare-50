@@ -16,5 +16,6 @@ public class ExplosionManager : MonoBehaviour
     public void Explode(Vector3 position)
     {
         Instantiate(go_Explosion, position, Quaternion.Euler(0, 0, 0));
+        print("pew");
     }
 }

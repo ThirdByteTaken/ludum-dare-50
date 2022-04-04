@@ -56,7 +56,7 @@ public class Asteroid : MonoBehaviour
             ExplosionManager.Instance.Explode(transform.position);
             AsteroidManager.DestroyAsteroid(gameObject);
             cam_Main.transform.position = gameObject.transform.position;
-            Invoke("EndGame", 4f);
+            Invoke("EndGame", .75f);
         }
         if (health <= 0)
         {

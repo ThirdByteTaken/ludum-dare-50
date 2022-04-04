@@ -1714,7 +1714,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1293cd393d2b34975abe33ab8df5af43, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2158,8 +2158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaed27f987c90f3409c1285223aadfc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFallTime: 30
-  minFallTime: 10
+  maxFallTime: 5
+  minFallTime: 1
   minHealth: 10
   maxHealth: 50
   landingPositionsRadius: 192
