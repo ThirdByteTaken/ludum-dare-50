@@ -52,7 +52,7 @@ public class AsteroidManager : MonoBehaviour
         float newSecondsToFall = Random.Range(minFallTime, maxFallTime);
         newAsteroid.GetComponent<Asteroid>().go_resource = ResourceManager.Instance.RandomResource();
         newAsteroid.GetComponent<Asteroid>().SetUpAsteroid(newFallVector, newLandingPosition, newHealth, newSecondsToFall);
-        Invoke("SpawnAsteroid", SpawnCurve.Evaluate(AsteroidsDestroyed) / 60f);
+        Invoke("SpawnAsteroid", 60 / SpawnCurve.Evaluate(AsteroidsDestroyed));
     }
 
     public static void DestroyAsteroid(GameObject asteroid)
