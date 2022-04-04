@@ -16,7 +16,6 @@ public class ExplosionManager : MonoBehaviour
 
     public void Explode(Vector3 position)
     {
-        go_Explosion.SetActive(true);
-        go_Explosion.transform.position = position;
+        Instantiate(go_Explosion, position, Quaternion.Euler(0, 0, 0));
     }
 }

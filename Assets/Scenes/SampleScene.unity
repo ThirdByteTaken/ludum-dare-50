@@ -1677,7 +1677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14beddaa0ee94913b3878059953be07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go_Explosion: {fileID: 0}
+  go_Explosion: {fileID: 3553669917278334267, guid: 523119e9502554945ba9a769db8610b3, type: 3}
 --- !u!1 &667177085
 GameObject:
   m_ObjectHideFlags: 0
@@ -3374,7 +3374,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12.1
+  m_fontSize: 11.2
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
