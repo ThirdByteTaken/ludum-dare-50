@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager Instance;
     ResourceManager resourceManager;
     public GameObject go_BuildMenu;
+    public List<Turret> turretTypes;
     public GameObject go_BuildButton;
     List<GameObject> go_placedTurrets = new List<GameObject>();
     GameObject go_currentPlacingTurret;
@@ -21,6 +23,7 @@ public class BuildManager : MonoBehaviour
     void Start()
     {
         resourceManager = ResourceManager.Instance;
+        turretTypes.ForEach(x => x.Start());
     }
 
     Animator anim_CurrentButton;
@@ -43,6 +46,7 @@ public class BuildManager : MonoBehaviour
         go_currentPlacingTurret.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         go_currentPlacingTurret.GetComponent<BoxCollider2D>().isTrigger = true;
         go_currentPlacingTurret.GetComponent<Gun>().enabled = false;
+        print("rock cost " + turret.RockCost);
         placingRock = turret.RockCost;
         placingWood = turret.WoodCost;
         placingIron = turret.IronCost;
@@ -52,12 +56,12 @@ public class BuildManager : MonoBehaviour
     {
         // Update Pricing        
         var turret = go_currentPlacingTurret.GetComponent<Gun>().turret;
-        if (turret.RockCost > 0) turret.RockCost += 5;
-        if (turret.WoodCost > 0) turret.WoodCost += 5;
-        if (turret.IronCost > 0) turret.IronCost += 5;
-        if (turret.GoldCost > 0) turret.GoldCost += 5;
+        if (turret.RockCost > 0) turret.RockCost = Mathf.Clamp(turret.RockCost + 5, 0, 99);
+        if (turret.WoodCost > 0) turret.WoodCost = Mathf.Clamp(turret.WoodCost + 5, 0, 99);
+        if (turret.IronCost > 0) turret.IronCost = Mathf.Clamp(turret.IronCost + 5, 0, 99);
+        if (turret.GoldCost > 0) turret.GoldCost = Mathf.Clamp(turret.GoldCost + 5, 0, 99);
 
-        turret.text.text = "<u><i>" + turret.name + "</i></u> " + turret.RockCost + " rock\t " + turret.WoodCost + " wood " + turret.IronCost + " iron\t " + turret.GoldCost + " gold range  -\t" + turret.Range + "\t\tshot speed -\t" + turret.ShotSpeed + " damage -\t" + turret.Damage + "\t\tfire speed -\t" + turret.FireSpeed;
+        go_BuildMenu.transform.Find(turret.name).GetChild(0).GetComponent<TMPro.TMP_Text>().text = "<u><i>" + turret.name + "</i></u>\n" + turret.RockCost + " rock\t " + string.Format("{0:00}", turret.WoodCost) + " wood\n" + string.Format("{0:00}", turret.IronCost) + " iron\t " + string.Format("{0:00}", turret.GoldCost) + " gold\nrange  -\t" + turret.Range + "\t\tshot speed -\t" + turret.ShotSpeed + "\ndamage -\t" + turret.Damage + "\t\tfire speed -\t" + turret.FireSpeed;
         go_placedTurrets.Add(go_currentPlacingTurret);
         go_placedTurrets.ForEach(x => x.transform.Find("Range").GetComponent<SpriteRenderer>().enabled = false);
         go_currentPlacingTurret.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;

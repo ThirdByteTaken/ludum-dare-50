@@ -2140,6 +2140,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go_BuildMenu: {fileID: 1358911432}
+  turretTypes:
+  - {fileID: 11400000, guid: a143ed261f8005a438146f06327e0a6e, type: 2}
+  - {fileID: 11400000, guid: d08134e932e6fd5428b040373f4f4c8f, type: 2}
+  - {fileID: 11400000, guid: 311a10c96448ba64a98a6d998541254f, type: 2}
+  - {fileID: 11400000, guid: 02aa664bd32172f429290867bb58e2e5, type: 2}
   go_BuildButton: {fileID: 348765027}
 --- !u!114 &627909247
 MonoBehaviour:

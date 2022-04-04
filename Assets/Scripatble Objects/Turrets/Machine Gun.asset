@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772677e0254e7a34386b4ec378399a72, type: 3}
   m_Name: Machine Gun
   m_EditorClassIdentifier: 
+  rockCost: 20
+  woodCost: 10
+  ironCost: 10
+  goldCost: 5
   RockCost: 20
   WoodCost: 10
   IronCost: 10
@@ -21,4 +25,3 @@ MonoBehaviour:
   Damage: 05
   FireSpeed: 90
   prefab: {fileID: 3364442625970758730, guid: ee3014f4b6075b542bae102aef9b0ed9, type: 3}
-  text: {fileID: 0}

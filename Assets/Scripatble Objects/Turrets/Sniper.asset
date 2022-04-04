@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772677e0254e7a34386b4ec378399a72, type: 3}
   m_Name: Sniper
   m_EditorClassIdentifier: 
+  rockCost: 10
+  woodCost: 5
+  ironCost: 5
+  goldCost: 0
   RockCost: 10
   WoodCost: 5
   IronCost: 5
@@ -21,4 +25,3 @@ MonoBehaviour:
   Damage: 20
   FireSpeed: 10
   prefab: {fileID: 3364442625970758730, guid: 4d881988fc5855544ad9bc92a4fbfa95, type: 3}
-  text: {fileID: 0}

@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772677e0254e7a34386b4ec378399a72, type: 3}
   m_Name: Turret
   m_EditorClassIdentifier: 
-  RockCost: 10
+  rockCost: 10
+  woodCost: 0
+  ironCost: 0
+  goldCost: 0
+  RockCost: 99
   WoodCost: 0
   IronCost: 0
   GoldCost: 0
@@ -21,4 +25,3 @@ MonoBehaviour:
   Damage: 10
   FireSpeed: 30
   prefab: {fileID: 3364442625970758730, guid: 6ac668ee95eb18a418bdad5d1413da83, type: 3}
-  text: {fileID: 0}
