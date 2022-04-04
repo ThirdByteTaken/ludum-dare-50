@@ -14,6 +14,8 @@ public class BuildManager : MonoBehaviour
     int placingWood;
     int placingIron;
     int placingGold;
+
+
     void Awake()
     {
         Instance = this;
