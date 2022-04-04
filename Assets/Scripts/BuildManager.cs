@@ -14,6 +14,8 @@ public class BuildManager : MonoBehaviour
     int placingWood;
     int placingIron;
     int placingGold;
+
+
     void Awake()
     {
         Instance = this;
@@ -50,6 +52,13 @@ public class BuildManager : MonoBehaviour
     }
     public void StopPlacing()
     {
+        // Update Pricing
+        var turret = go_currentPlacingTurret.GetComponent<Gun>().turret;
+        if (turret.RockCost > 0) turret.RockCost += 5;
+        if (turret.WoodCost > 0) turret.WoodCost += 5;
+        if (turret.IronCost > 0) turret.IronCost += 5;
+        if (turret.GoldCost > 0) turret.GoldCost += 5;
+
         go_placedTurrets.Add(go_currentPlacingTurret);
         go_placedTurrets.ForEach(x => x.transform.Find("Range").GetComponent<SpriteRenderer>().enabled = false);
         go_currentPlacingTurret.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;

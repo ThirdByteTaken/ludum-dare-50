@@ -23,6 +23,8 @@ public class Gun : MonoBehaviour
     [SerializeField]
     Bullet bullet;
 
+    public Turret turret;
+
     Camera cam_Main;
 
     [HideInInspector]

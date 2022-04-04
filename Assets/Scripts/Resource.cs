@@ -28,6 +28,7 @@ public class Resource : MonoBehaviour
     void StopMoving()
     {
         rigidBody.velocity = Vector2.zero;
+        Invoke("Despawn", 10f);
     }
     void OnCollisionEnter2D(Collision2D collider)
     {
@@ -54,6 +55,10 @@ public class Resource : MonoBehaviour
         }
     }
 
+    void Despawn()
+    {
+        Destroy(gameObject);
+    }
 }
 
 public enum Resources
