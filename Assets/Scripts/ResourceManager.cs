@@ -9,60 +9,17 @@ public class ResourceManager : MonoBehaviour
     const int Money_Gain_Time = 5; // In Seconds
 
     public static ResourceManager Instance;
-    public int Money;
-    int gold, iron, wood, rock;
-    public int Gold
-    {
-        get
-        {
-            return gold;
-        }
-        set
-        {
-            gold = value;
-        }
-    }
-    public int Iron
-    {
-        get
-        {
-            return iron;
-        }
-        set
-        {
-            iron = value;
-        }
-    }
-    public int Wood
-    {
-        get
-        {
-            return wood;
-        }
-        set
-        {
-            wood = value;
-        }
-    }
-    public int Rock
-    {
-        get
-        {
-            return rock;
-        }
-        set
-        {
-            rock = value;
-        }
-    }
+
+    public int Gold, Iron, Wood, Rock;
+
 
     public GameObject[] go_Resources;
 
     [SerializeField]
-    TMP_Text txt_Money, txt_ResourceGain;
+    TMP_Text[] txt_Resources, txt_ResourceGains;
 
     [SerializeField]
-    Animator anim_ResourceGain;
+    Animator[] anim_ResourceGains;
 
     void Awake()
     {
@@ -70,21 +27,15 @@ public class ResourceManager : MonoBehaviour
     }
     void Start()
     {
-        Money = 10; // TODO fix
-        Invoke("GainCurrency", Money_Gain_Time);
+
     }
 
-    void GainCurrency()
+    public void ChangeResource(int deltaResource, int resourceID, ref int resource)
     {
-        ChangeCurrency(Money_Gain_Amount);
-        Invoke("GainCurrency", Money_Gain_Time);
-    }
-    public void ChangeCurrency(int deltaCurrency)
-    {
-        Money += deltaCurrency;
-        txt_Money.text = "Money-" + Money;
-        txt_ResourceGain.text = (deltaCurrency < 0) ? deltaCurrency.ToString() : "+" + deltaCurrency.ToString();
-        anim_ResourceGain.SetTrigger((deltaCurrency < 0) ? "Lose" : "Gain");
+        resource += deltaResource;
+        txt_Resources[resourceID].text = resource.ToString();
+        txt_ResourceGains[resourceID].text = (deltaResource < 0) ? deltaResource.ToString() : "+" + deltaResource.ToString();
+        anim_ResourceGains[resourceID].SetTrigger((deltaResource < 0) ? "Lose" : "Gain");
     }
 
     public GameObject RandomResource() // Weighted odds

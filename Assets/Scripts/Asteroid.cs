@@ -50,12 +50,14 @@ public class Asteroid : MonoBehaviour
 
         if (height <= 0)
         {
+            ExplosionManager.Instance.Explode(transform.position);
             AsteroidManager.DestroyAsteroid(gameObject);
             print("you got blown up");
         }
         if (health <= 0)
         {
             var resource = Instantiate(go_resource);
+            resource.GetComponent<Resource>().StartMoving();
             resource.transform.position = transform.position;
             AsteroidManager.DestroyAsteroid(gameObject);
             return;

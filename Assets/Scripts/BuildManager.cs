@@ -10,7 +10,10 @@ public class BuildManager : MonoBehaviour
     public GameObject go_BuildButton;
     List<GameObject> go_placedTurrets = new List<GameObject>();
     GameObject go_currentPlacingTurret;
-    int placingCost;
+    int placingRock;
+    int placingWood;
+    int placingIron;
+    int placingGold;
     void Awake()
     {
         Instance = this;
@@ -28,7 +31,7 @@ public class BuildManager : MonoBehaviour
 
     public void BuyObject(Turret turret)
     {
-        if (resourceManager.Money < turret.cost)
+        if (resourceManager.Rock < turret.Rock || resourceManager.Wood < turret.Wood || resourceManager.Iron < turret.Iron || resourceManager.Gold < turret.Gold)
         {
             anim_CurrentButton.SetTrigger("CantBuild");
             return;
@@ -40,7 +43,10 @@ public class BuildManager : MonoBehaviour
         go_currentPlacingTurret.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         go_currentPlacingTurret.GetComponent<BoxCollider2D>().isTrigger = true;
         go_currentPlacingTurret.GetComponent<Gun>().enabled = false;
-        placingCost = turret.cost;
+        placingRock = turret.Rock;
+        placingWood = turret.Wood;
+        placingIron = turret.Iron;
+        placingGold = turret.Gold;
     }
     public void StopPlacing()
     {
@@ -50,7 +56,11 @@ public class BuildManager : MonoBehaviour
         go_currentPlacingTurret.GetComponent<BoxCollider2D>().isTrigger = false;
         go_currentPlacingTurret.GetComponent<Gun>().enabled = true;
 
-        resourceManager.ChangeCurrency(-placingCost);
+        //resourceManager.ChangeCurrency(-placingCost);
+        ResourceManager.Instance.ChangeResource(-placingRock, 0, ref ResourceManager.Instance.Rock);
+        ResourceManager.Instance.ChangeResource(-placingWood, 1, ref ResourceManager.Instance.Wood);
+        ResourceManager.Instance.ChangeResource(-placingIron, 2, ref ResourceManager.Instance.Iron);
+        ResourceManager.Instance.ChangeResource(-placingGold, 3, ref ResourceManager.Instance.Gold);
         HideBuildMenu();
     }
     public void CancelPlacing()
