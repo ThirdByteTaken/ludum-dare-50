@@ -42,6 +42,5 @@ public class AsteroidManager : MonoBehaviour
         GameObject explosion = Instantiate(s_go_ExplosionPrefab, asteroid.transform.position, asteroid.transform.rotation);
         Destroy(asteroid);
         Destroy(explosion, 0.5f);
-
     }
 }
