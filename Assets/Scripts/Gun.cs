@@ -31,9 +31,10 @@ public class Gun : MonoBehaviour
     public List<Asteroid> ast_PossibleTargets = new List<Asteroid>();
     public Asteroid ast_Target;
     AudioSource ShootSound;
+
     void Start()
     {
-        ShootSound = GetComponent<AudioSource>();
+        ShootSound = GetComponents<AudioSource>()[0];
         cam_Main = Camera.main;
         Invoke("AttemptFire", FireSpeed);
     }

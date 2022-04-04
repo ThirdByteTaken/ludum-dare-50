@@ -9,12 +9,14 @@ public class Placeable : MonoBehaviour
     public bool is_Placing = true;
     public bool is_Placeable = true;
     int colliders;
+    AudioSource PlaceSound;
 
     // Start is called before the first frame update
     void Start()
     {
         go_PlaceableObject = this.gameObject;
         cam_Main = Camera.main;
+        PlaceSound = GetComponents<AudioSource>()[1];
     }
 
     // Update is called once per frame
@@ -27,7 +29,9 @@ public class Placeable : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && is_Placeable)
             {
                 is_Placing = false;
+                PlaceSound.Play();
                 BuildManager.Instance.StopPlacing();
+
             }
             if (Input.GetMouseButtonDown(1))
             {

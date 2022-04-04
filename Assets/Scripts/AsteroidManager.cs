@@ -61,7 +61,7 @@ public class AsteroidManager : MonoBehaviour
         AsteroidsDestroyed++;
         Destroy(asteroid);
         Destroy(explosion, 0.5f);
-        Invoke("EndGame", 1.75f);
+        Invoke("EndGame", 2f);
     }
     void EndGame()
     {
