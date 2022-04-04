@@ -49,6 +49,12 @@ public class SceneLoader : MonoBehaviour
         SceneManager.UnloadSceneAsync(3);
     }
 
+    public static void PlayerDeath()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(4);
+    }
+
     public static bool isPaused = false;
     public static void TogglePause()
     {

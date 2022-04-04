@@ -10,10 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772677e0254e7a34386b4ec378399a72, type: 3}
-  m_Name: Sniper Turret
+  m_Name: Rocket
   m_EditorClassIdentifier: 
-  RockCost: 10
-  WoodCost: 5
-  IronCost: 5
-  GoldCost: 0
-  prefab: {fileID: 3364442625970758730, guid: 4d881988fc5855544ad9bc92a4fbfa95, type: 3}
+  RockCost: 30
+  WoodCost: 25
+  IronCost: 20
+  GoldCost: 15
+  Range: 20
+  ShotSpeed: 05
+  Damage: 50
+  FireSpeed: 15
+  prefab: {fileID: 3364442625970758730, guid: 6d476f68371973a4ba760a3b5a0d64a8, type: 3}
+  text: {fileID: 0}
