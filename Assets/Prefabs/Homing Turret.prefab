@@ -101,10 +101,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go_Head: {fileID: 3364442626930139349}
-  FireSpeed: 1
-  Damage: 20
+  FireSpeed: 2
+  Damage: 50
+  Bullet_Speed: 32
   Homing: 1
-  bullet: {fileID: 2221394275494579366, guid: 7ae6d4d68c354b34caa44ee4fb04f121, type: 3}
+  bullet: {fileID: 2221394275494579366, guid: 40160a95cd413ff40a8502c2ea1b78d8, type: 3}
   go_Target: {fileID: 0}
 --- !u!50 &8049986797393118466
 Rigidbody2D:
@@ -140,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_Placing: 1
+  is_Placeable: 1
 --- !u!61 &6340120041291387346
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -237,7 +239,7 @@ SpriteRenderer:
   m_SortingLayerID: 816752451
   m_SortingLayer: 2
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: d8eb44f2035a44db4bfb8e73df749039, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ea2687aee855e9743acd6ed7ead9c4f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -277,7 +279,7 @@ Transform:
   m_GameObject: {fileID: 3364442627494817041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 42.41836}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 3364442625970758727}
   m_RootOrder: 1

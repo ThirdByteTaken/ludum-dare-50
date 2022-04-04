@@ -11,6 +11,7 @@ public class Asteroid : MonoBehaviour
 
     public float secondsToFall;
     public float health;
+    public float predictedHealth; // health after bullets currently in the air hit it
 
     float startingHealth;
 
@@ -18,6 +19,7 @@ public class Asteroid : MonoBehaviour
 
     public Sprite[] spr_Asteroids;
 
+    public GameObject go_resource;
 
     public void SetUpAsteroid(Vector2 _FallVector, Vector2 LandingPosition, float _health, float _secondsToFall)
     {
@@ -31,7 +33,10 @@ public class Asteroid : MonoBehaviour
         startingHealth = health;
         ready = true;
     }
-
+    void Start()
+    {
+        predictedHealth = health;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -45,12 +50,15 @@ public class Asteroid : MonoBehaviour
 
         if (height <= 0)
         {
-            Destroy(this.gameObject);
+            ExplosionManager.Instance.Explode(transform.position);
+            AsteroidManager.DestroyAsteroid(gameObject);
             print("you got blown up");
         }
         if (health <= 0)
         {
-            Destroy(this.gameObject);
+            var resource = Instantiate(go_resource);
+            resource.transform.position = transform.position;
+            AsteroidManager.DestroyAsteroid(gameObject);
             return;
         }
         sr_Asteroid.sprite = spr_Asteroids[Mathf.RoundToInt((health / startingHealth) * (spr_Asteroids.Length - 1))];

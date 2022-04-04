@@ -13,11 +13,15 @@ public class AsteroidManager : MonoBehaviour
     public float landingPositionsRadius;
     public float moveSpeed;
     public GameObject go_AsteroidPrefab;
+    public GameObject go_ExplosionPrefab;
+    private static GameObject s_go_ExplosionPrefab;
 
     public Sprite[] spr_Asteroids;
     void Start()
     {
+        s_go_ExplosionPrefab = go_ExplosionPrefab;
         SpawnAsteroid();
+
     }
 
     void SpawnAsteroid()
@@ -28,7 +32,15 @@ public class AsteroidManager : MonoBehaviour
         Vector2 newLandingPosition = new Vector2(Random.Range(-landingPositionsRadius / 2, landingPositionsRadius / 2), Random.Range(-landingPositionsRadius / 2, landingPositionsRadius / 2));
         float newHealth = Random.Range(minHealth, maxHealth);
         float newSecondsToFall = Random.Range(minFallTime, maxFallTime);
+        newAsteroid.GetComponent<Asteroid>().go_resource = ResourceManager.Instance.RandomResource();
         newAsteroid.GetComponent<Asteroid>().SetUpAsteroid(newFallVector, newLandingPosition, newHealth, newSecondsToFall);
         Invoke("SpawnAsteroid", 1);
+    }
+
+    public static void DestroyAsteroid(GameObject asteroid)
+    {
+        GameObject explosion = Instantiate(s_go_ExplosionPrefab, asteroid.transform.position, asteroid.transform.rotation);
+        Destroy(asteroid);
+        Destroy(explosion, 0.5f);
     }
 }
