@@ -553,7 +553,7 @@ RectTransform:
   - {fileID: 1409600506}
   - {fileID: 2144972378}
   m_Father: {fileID: 622184620}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.175, y: -1}
   m_AnchorMax: {x: 0.35, y: 1}
@@ -1266,8 +1266,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 348765031}
-  - {fileID: 165292512}
   - {fileID: 1237151693}
+  - {fileID: 165292512}
   - {fileID: 2132798762}
   - {fileID: 667177086}
   m_Father: {fileID: 1590987745}
@@ -1375,14 +1375,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Money: 10
+  Gold: 0
+  Iron: 0
+  Wood: 0
+  Rock: 0
   go_Resources:
   - {fileID: 4760332079198973310, guid: c88f6a21132254f99960bac504da5c86, type: 3}
   - {fileID: 3752668486799551716, guid: cc160896374454c3b9d2f94f145c27ed, type: 3}
   - {fileID: 4061421420159203894, guid: 7606d6e215c4a4243a726643d9dd041c, type: 3}
   - {fileID: 4982256172240435473, guid: ad15e642d37c3483db4d82a530e46dd9, type: 3}
-  txt_Money: {fileID: 1071757775}
-  txt_ResourceGain: {fileID: 978069833}
-  anim_ResourceGain: {fileID: 978069832}
+  txt_Resources:
+  - {fileID: 954130005}
+  - {fileID: 1409600507}
+  - {fileID: 1315120662}
+  - {fileID: 1081488897}
+  txt_ResourceGains:
+  - {fileID: 1845161037}
+  - {fileID: 2144972380}
+  - {fileID: 2144972380}
+  - {fileID: 1230750245}
+  anim_ResourceGains:
+  - {fileID: 1845161036}
+  - {fileID: 2144972379}
+  - {fileID: 900896165}
+  - {fileID: 1230750244}
 --- !u!114 &627909246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1636,7 +1652,7 @@ GameObject:
   - component: {fileID: 900896166}
   - component: {fileID: 900896165}
   m_Layer: 5
-  m_Name: ResourceGain
+  m_Name: IronResourceGain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1789,7 +1805,7 @@ GameObject:
   - component: {fileID: 954130006}
   - component: {fileID: 954130005}
   m_Layer: 5
-  m_Name: ResourceText
+  m_Name: StoneResourceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2211,7 +2227,7 @@ GameObject:
   - component: {fileID: 1081488898}
   - component: {fileID: 1081488897}
   m_Layer: 5
-  m_Name: ResourceText
+  m_Name: GoldResourceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2346,7 +2362,7 @@ GameObject:
   - component: {fileID: 1230750245}
   - component: {fileID: 1230750244}
   m_Layer: 5
-  m_Name: ResourceGain
+  m_Name: GoldResourceGain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2517,7 +2533,7 @@ RectTransform:
   - {fileID: 954130004}
   - {fileID: 1845161035}
   m_Father: {fileID: 622184620}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: -1}
   m_AnchorMax: {x: 0.175, y: 1}
@@ -2536,7 +2552,7 @@ GameObject:
   - component: {fileID: 1315120663}
   - component: {fileID: 1315120662}
   m_Layer: 5
-  m_Name: ResourceText
+  m_Name: IronResourceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2748,7 +2764,7 @@ GameObject:
   - component: {fileID: 1409600508}
   - component: {fileID: 1409600507}
   m_Layer: 5
-  m_Name: ResourceText
+  m_Name: WoodResourceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3284,7 +3300,7 @@ GameObject:
   - component: {fileID: 1845161037}
   - component: {fileID: 1845161036}
   m_Layer: 5
-  m_Name: ResourceGain
+  m_Name: StoneResourceGain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3618,7 +3634,7 @@ GameObject:
   - component: {fileID: 2144972380}
   - component: {fileID: 2144972379}
   m_Layer: 5
-  m_Name: ResourceGain
+  m_Name: WoodResourceGain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
