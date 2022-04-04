@@ -31,7 +31,7 @@ public class BuildManager : MonoBehaviour
 
     public void BuyObject(Turret turret)
     {
-        if (resourceManager.Rock < turret.Rock || resourceManager.Wood < turret.Wood || resourceManager.Iron < turret.Iron || resourceManager.Gold < turret.Gold)
+        if (resourceManager.Rock < turret.RockCost || resourceManager.Wood < turret.WoodCost || resourceManager.Iron < turret.IronCost || resourceManager.Gold < turret.GoldCost)
         {
             anim_CurrentButton.SetTrigger("CantBuild");
             return;
@@ -43,10 +43,10 @@ public class BuildManager : MonoBehaviour
         go_currentPlacingTurret.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         go_currentPlacingTurret.GetComponent<BoxCollider2D>().isTrigger = true;
         go_currentPlacingTurret.GetComponent<Gun>().enabled = false;
-        placingRock = turret.Rock;
-        placingWood = turret.Wood;
-        placingIron = turret.Iron;
-        placingGold = turret.Gold;
+        placingRock = turret.RockCost;
+        placingWood = turret.WoodCost;
+        placingIron = turret.IronCost;
+        placingGold = turret.GoldCost;
     }
     public void StopPlacing()
     {
@@ -57,10 +57,10 @@ public class BuildManager : MonoBehaviour
         go_currentPlacingTurret.GetComponent<Gun>().enabled = true;
 
         //resourceManager.ChangeCurrency(-placingCost);
-        ResourceManager.Instance.ChangeResource(-placingRock, 0, ref ResourceManager.Instance.Rock);
-        ResourceManager.Instance.ChangeResource(-placingWood, 1, ref ResourceManager.Instance.Wood);
-        ResourceManager.Instance.ChangeResource(-placingIron, 2, ref ResourceManager.Instance.Iron);
-        ResourceManager.Instance.ChangeResource(-placingGold, 3, ref ResourceManager.Instance.Gold);
+        if (placingRock != 0) ResourceManager.Instance.ChangeResource(-placingRock, 0, ref ResourceManager.Instance.Rock);
+        if (placingWood != 0) ResourceManager.Instance.ChangeResource(-placingWood, 1, ref ResourceManager.Instance.Wood);
+        if (placingIron != 0) ResourceManager.Instance.ChangeResource(-placingIron, 2, ref ResourceManager.Instance.Iron);
+        if (placingGold != 0) ResourceManager.Instance.ChangeResource(-placingGold, 3, ref ResourceManager.Instance.Gold);
         HideBuildMenu();
     }
     public void CancelPlacing()

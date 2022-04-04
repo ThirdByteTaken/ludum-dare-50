@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1149828174744712110}
   - component: {fileID: -5060225453955379737}
   m_Layer: 0
-  m_Name: Simple Turret
+  m_Name: Machine Gun
   m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go_Head: {fileID: 3364442626930139349}
-  FireSpeed: 1
-  Damage: 10
+  FireSpeed: 0.33
+  Damage: 5
   Bullet_Speed: 64
   Homing: 0
   bullet: {fileID: 2221394275494579366, guid: 7ae6d4d68c354b34caa44ee4fb04f121, type: 3}
@@ -240,7 +240,7 @@ SpriteRenderer:
   m_SortingLayerID: 816752451
   m_SortingLayer: 2
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: d8eb44f2035a44db4bfb8e73df749039, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76ebb6a79155cbb4c9193819760c8851, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -326,7 +326,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 95522cce91eea478aacac4e1bb358231, type: 3}
-  m_Color: {r: 1, g: 0.83978903, b: 0.19215685, a: 0.23529412}
+  m_Color: {r: 0, g: 0.016062737, b: 1, a: 0.23529412}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

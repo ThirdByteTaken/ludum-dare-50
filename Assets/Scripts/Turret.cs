@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Turret : ScriptableObject
 {
-    public int Rock;
-    public int Wood;
-    public int Iron;
-    public int Gold;
+    public int RockCost;
+    public int WoodCost;
+    public int IronCost;
+    public int GoldCost;
     public GameObject prefab;
 }
