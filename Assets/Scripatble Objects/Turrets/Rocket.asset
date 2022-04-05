@@ -23,5 +23,5 @@ MonoBehaviour:
   Range: 20
   ShotSpeed: 05
   Damage: 50
-  FireSpeed: 15
+  FireSpeed: 30
   prefab: {fileID: 3364442625970758730, guid: 6d476f68371973a4ba760a3b5a0d64a8, type: 3}
