@@ -73,6 +73,7 @@ public class AsteroidManager : MonoBehaviour
     }
     void EndGame()
     {
+        ScoreManager.Score = AsteroidsDestroyed;
         SceneLoader.PlayerDeath();
     }
 }
