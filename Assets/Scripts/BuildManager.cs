@@ -56,7 +56,11 @@ public class BuildManager : MonoBehaviour
     }
     public void StopPlacing()
     {
-        if (!is_tutorialOver) go_Tutorial.SetActive(false);
+        if (!is_tutorialOver)
+        {
+            go_Tutorial.SetActive(false);
+            Mine.Instance.StartSpawning();
+        }
         // Update Pricing        
         var turret = go_currentPlacingTurret.GetComponent<Gun>().turret;
         if (turret.RockCost > 0) turret.RockCost = Mathf.Clamp(turret.RockCost + 5, 0, 99);
