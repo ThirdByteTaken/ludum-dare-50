@@ -59,7 +59,6 @@ public class BuildManager : MonoBehaviour
         if (!is_tutorialOver)
         {
             go_Tutorial.SetActive(false);
-            Mine.Instance.StartSpawning();
         }
         // Update Pricing        
         var turret = go_currentPlacingTurret.GetComponent<Gun>().turret;

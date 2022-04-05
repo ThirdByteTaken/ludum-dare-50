@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class Mine : MonoBehaviour
 {
-    public static Mine Instance;
-
     // Start is called before the first frame update
     public int SpawnTime;
     public float MinSpeed;
     public float MaxSpeed;
     void Start()
-    {
-        Instance = this;
-    }
-
-    public void StartSpawning()
     {
         Invoke("SpawnRock", SpawnTime);
     }

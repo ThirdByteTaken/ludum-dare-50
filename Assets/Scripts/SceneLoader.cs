@@ -8,7 +8,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Additive);
+        SceneManager.LoadScene(0, LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync(0);
     }
 
@@ -16,7 +16,7 @@ public class SceneLoader : MonoBehaviour
     {
         Time.timeScale = 1;
         isPaused = false;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     public void LoadCredits()
@@ -31,7 +31,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 
